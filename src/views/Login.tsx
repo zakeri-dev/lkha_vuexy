@@ -130,6 +130,8 @@ const Login = ({ mode }: { mode: SystemMode }) => {
   const handleClickShowPassword = () => setIsPasswordShown(show => !show)
 
   const onSubmit: SubmitHandler<FormData> = async (data: FormData) => {
+    console.log('first')
+
     const res = await signIn('credentials', {
       email: data.email,
       password: data.password,
@@ -148,6 +150,24 @@ const Login = ({ mode }: { mode: SystemMode }) => {
         setErrorState(error)
       }
     }
+  }
+
+  const popupCenter = (url: string, title: string) => {
+    const dualScreenLeft = window.screenLeft ?? window.screenX
+    const dualScreenTop = window.screenTop ?? window.screenY
+
+    const width = window.innerWidth ?? document.documentElement.clientWidth ?? screen.width
+
+    const height = window.innerHeight ?? document.documentElement.clientHeight ?? screen.height
+
+    const systemZoom = width / window.screen.availWidth
+
+    const left = (width - 350) / 2 / systemZoom + dualScreenLeft
+    const top = (height - 500) / 2 / systemZoom + dualScreenTop
+
+    const newWindow = window.open(url, title, `width=350,height=500,top=${top},left=${left}`)
+
+    newWindow?.focus()
   }
 
   return (
@@ -264,7 +284,7 @@ const Login = ({ mode }: { mode: SystemMode }) => {
               </Typography>
             </div>
             <Divider className='gap-2'>or</Divider>
-            <Button
+            {/* <Button
               color='secondary'
               className='self-center text-textPrimary'
               startIcon={<img src='/images/logos/google.png' alt='Google' width={22} />}
@@ -272,6 +292,19 @@ const Login = ({ mode }: { mode: SystemMode }) => {
               onClick={() => signIn('google')}
             >
               Sign in with Google
+            </Button> */}
+            <Button
+              color='secondary'
+              className='self-center text-textPrimary'
+              startIcon={<i className='tabler-shield-lock text-[22px]' />}
+              sx={{ '& .MuiButton-startIcon': { marginInlineEnd: 3 } }}
+
+              // onClick={() => popupCenter('/sso', 'Sample Sign In')}
+
+              // startIcon={<img src='/images/logos/google.png' alt='Google' width={22} />}
+              // onClick={() => signIn('keycloak')}
+            >
+              ورود یکپارچه ساهم گارد
             </Button>
           </form>
         </div>

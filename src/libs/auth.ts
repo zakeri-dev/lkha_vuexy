@@ -1,16 +1,10 @@
 // Third-party Imports
 import CredentialProvider from 'next-auth/providers/credentials'
-import GoogleProvider from 'next-auth/providers/google'
-import { PrismaAdapter } from '@auth/prisma-adapter'
-import { PrismaClient } from '@prisma/client'
-import type { NextAuthOptions } from 'next-auth'
-import type { Adapter } from 'next-auth/adapters'
+import KeycloakProvider from 'next-auth/providers/keycloak'
 
-const prisma = new PrismaClient()
+import type { NextAuthOptions } from 'next-auth'
 
 export const authOptions: NextAuthOptions = {
-  adapter: PrismaAdapter(prisma) as Adapter,
-
   // ** Configure one or more authentication providers
   // ** Please refer to https://next-auth.js.org/configuration/options#providers for more `providers` options
   providers: [
@@ -66,9 +60,10 @@ export const authOptions: NextAuthOptions = {
       }
     }),
 
-    GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID as string,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET as string
+    KeycloakProvider({
+      clientId: 'lkha_panel_front',
+      clientSecret: 'IdBroQ654X8glZHWXKyXof56tw2OsqMB',
+      issuer: 'https://sso.app.khi.local/realms/lkha'
     })
 
     // ** ...add more providers here
@@ -104,13 +99,15 @@ export const authOptions: NextAuthOptions = {
      * the `session()` callback. So we have to add custom parameters in `token`
      * via `jwt()` callback to make them accessible in the `session()` callback
      */
-    async jwt({ token, user }) {
+    async jwt({ token, user, account }) {
       if (user) {
         /*
          * For adding custom parameters to user in session, we first need to add those parameters
          * in token which then will be available in the `session()` callback
          */
         token.name = user.name
+        token.accessToken = account?.access_token
+        token.user = user
       }
 
       return token
@@ -118,7 +115,11 @@ export const authOptions: NextAuthOptions = {
     async session({ session, token }) {
       if (session.user) {
         // ** Add custom params to user in session which are added in `jwt()` callback via `token` parameter
+
         session.user.name = token.name
+        session.user.email = token.email
+
+        // session.user.email = JSON.stringify(token)
       }
 
       return session

@@ -1,10 +1,5 @@
-/*
- * We recommend using the merged theme if you want to override our core theme.
- * This means you can use our core theme and override it with your own customizations.
- * Write your overrides in the userTheme object in this file.
- * The userTheme object is merged with the coreTheme object within this file.
- * Export this file and import it in the `@components/theme/index.tsx` file to use the merged theme.
- */
+// Next Imports
+import localFont from 'next/font/local'
 
 // MUI Imports
 import { deepmerge } from '@mui/utils'
@@ -17,9 +12,50 @@ import type { SystemMode } from '@core/types'
 // Core Theme Imports
 import coreTheme from '@core/theme'
 
+const IRANSansX = localFont({
+  src: [
+    {
+      path: '../../assets/fonts/Woff2/IRANSansXFaNum-Regular.woff2',
+      weight: '400',
+      style: 'normal'
+    },
+    {
+      path: '../../assets/fonts/Woff2/IRANSansXFaNum-Medium.woff2',
+      weight: '500',
+      style: 'normal'
+    },
+    {
+      path: '../../assets/fonts/Woff2/IRANSansXFaNum-DemiBold.woff2',
+      weight: '600',
+      style: 'normal'
+    },
+    {
+      path: '../../assets/fonts/Woff2/IRANSansXFaNum-Bold.woff2',
+      weight: '700',
+      style: 'normal'
+    },
+    {
+      path: '../../assets/fonts/Woff2/IRANSansXFaNum-ExtraBold.woff2',
+      weight: '800',
+      style: 'normal'
+    }
+  ]
+})
+
+// const montserrat = Montserrat({
+//   subsets: ['latin'],
+//   weight: ['300', '400', '500', '600', '700', '800', '900']
+// })
+
 const mergedTheme = (settings: Settings, mode: SystemMode, direction: Theme['direction']) => {
   // Vars
   const userTheme = {
+    typography: {
+      // fontFamily: montserrat.style.fontFamily
+
+      fontFamily: IRANSansX.style.fontFamily
+    }
+
     // Write your overrides here.
   } as Theme
 
