@@ -5,6 +5,8 @@ import { useEffect, useRef } from 'react'
 import type { CSSProperties } from 'react'
 
 // Third-party Imports
+import Image from 'next/image'
+
 import styled from '@emotion/styled'
 
 // Type Imports
@@ -19,6 +21,7 @@ import themeConfig from '@configs/themeConfig'
 // Hook Imports
 import useVerticalNav from '@menu/hooks/useVerticalNav'
 import { useSettings } from '@core/hooks/useSettings'
+import Lkhalogo from '@assets/images/logo/lkhalogow.png'
 
 type LogoTextProps = {
   isHovered?: VerticalNavContextProps['isHovered']
@@ -71,7 +74,8 @@ const Logo = ({ color }: { color?: CSSProperties['color'] }) => {
 
   return (
     <div className='flex items-center'>
-      <VuexyLogo className='text-2xl text-primary' />
+      <Image src={Lkhalogo} alt='Logo' className='w-56 h-auto text-primary' />
+      {/* <VuexyLogo className='text-2xl text-primary' />
       <LogoText
         color={color}
         ref={logoTextRef}
@@ -81,7 +85,7 @@ const Logo = ({ color }: { color?: CSSProperties['color'] }) => {
         isBreakpointReached={isBreakpointReached}
       >
         {themeConfig.templateName}
-      </LogoText>
+      </LogoText> */}
     </div>
   )
 }

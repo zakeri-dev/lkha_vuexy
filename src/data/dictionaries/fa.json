@@ -1,6 +1,7 @@
 {
   "navigation": {
-    "sso-login-text": "ورود یکپارچه ساهم گارد",
+    "sso_login_text": "ورود یکپارچه ساهم گارد",
+    "Revenue_Growth": "Dashboards",
     "dashboards": "Dashboards",
     "crm": "CRM",
     "analytics": "Analytics",

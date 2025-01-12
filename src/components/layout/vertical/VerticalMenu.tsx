@@ -76,10 +76,41 @@ const VerticalMenu = ({ dictionary, scrollMenu }: Props) => {
       {/* Vertical Menu */}
       <Menu
         popoutMenuOffset={{ mainAxis: 23 }}
-        menuItemStyles={menuItemStyles(verticalNavOptions, theme)}
+        menuItemStyles={{
+          ...menuItemStyles(verticalNavOptions, theme),
+          button: ({ disabled, open, isSubmenu, level }) => ({
+            border: '1px solid #182da310',
+
+            '&:hover': {
+              backgroundColor: '#7d83a72e'
+            },
+            color: '#fff',
+            borderRadius: '5px',
+            padding: '12px 12px'
+          }),
+          label: {
+            color: '#fff',
+            '&:hover': {
+              color: '#fff'
+            }
+          },
+          subMenuExpandIcon: ({ disabled, open, isSubmenu, level }) => ({
+            color: '#fff',
+            '&:hover': {}
+          }),
+          icon: ({ disabled, open, isSubmenu, level }) => ({
+            color: '#ffffff'
+          })
+        }}
         renderExpandIcon={({ open }) => <RenderExpandIcon open={open} transitionDuration={transitionDuration} />}
         renderExpandedMenuItemIcon={{ icon: <i className='tabler-circle text-xs' /> }}
-        menuSectionStyles={menuSectionStyles(verticalNavOptions, theme)}
+        menuSectionStyles={{
+          ...menuSectionStyles(verticalNavOptions, theme),
+
+          label: {
+            color: '#c2c2c2'
+          }
+        }}
       >
         <SubMenu
           label={dictionary['navigation'].dashboards}

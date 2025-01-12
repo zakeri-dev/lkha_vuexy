@@ -45,6 +45,7 @@ import { useSettings } from '@core/hooks/useSettings'
 
 // Util Imports
 import { getLocalizedUrl } from '@/utils/i18n'
+import type { getDictionary } from '@/utils/getDictionary'
 
 // Styled Custom Components
 const LoginIllustration = styled('img')(({ theme }) => ({
@@ -85,7 +86,15 @@ const schema = object({
   )
 })
 
-const Login = ({ mode }: { mode: SystemMode }) => {
+type Props = {
+  dictionary: Awaited<ReturnType<typeof getDictionary>>
+  mode: SystemMode
+}
+
+const Login = (props: Props) => {
+  // Props
+  const { dictionary, mode } = props
+
   // States
   const [isPasswordShown, setIsPasswordShown] = useState(false)
   const [errorState, setErrorState] = useState<ErrorType | null>(null)
@@ -304,7 +313,7 @@ const Login = ({ mode }: { mode: SystemMode }) => {
               // startIcon={<img src='/images/logos/google.png' alt='Google' width={22} />}
               // onClick={() => signIn('keycloak')}
             >
-              ورود یکپارچه ساهم گارد
+              {dictionary['navigation'].sso_login_text}
             </Button>
           </form>
         </div>

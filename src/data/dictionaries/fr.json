@@ -1,5 +1,6 @@
 {
   "navigation": {
+    "sso_login_text": "ورود یکپارچه ساهم گارد",
     "dashboards": "Tableaux de bord",
     "crm": "GRC",
     "analytics": "Analytique",

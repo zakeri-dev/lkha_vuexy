@@ -36,7 +36,7 @@ const NavHeader = ({ children }: ChildrenType) => {
 
   return (
     <StyledNavHeader
-      className={verticalNavClasses.header}
+      className='pt-5 px-2'
       isHovered={isHovered}
       isCollapsed={isCollapsed}
       collapsedWidth={collapsedWidth}

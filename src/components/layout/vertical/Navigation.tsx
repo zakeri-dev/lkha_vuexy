@@ -11,6 +11,8 @@ import { useParams } from 'next/navigation'
 import { styled, useColorScheme, useTheme } from '@mui/material/styles'
 
 // Type Imports
+import classNames from 'classnames'
+
 import type { getDictionary } from '@/utils/getDictionary'
 import type { Mode } from '@core/types'
 import type { Locale } from '@configs/i18n'
@@ -104,8 +106,9 @@ const Navigation = (props: Props) => {
     // Sidebar Vertical Menu
     <VerticalNav
       customStyles={navigationCustomStyles(verticalNavOptions, theme)}
-      collapsedWidth={71}
-      backgroundColor='var(--mui-palette-background-paper)'
+      collapsedWidth={73}
+      backgroundColor={'#182da3'}
+      // backgroundColor='var(--mui-palette-background-paper)'
       // eslint-disable-next-line lines-around-comment
       // The following condition adds the data-dark attribute to the VerticalNav component
       // when semiDark is enabled and the mode or systemMode is light
@@ -121,9 +124,9 @@ const Navigation = (props: Props) => {
         </Link>
         {!(isCollapsed && !isHovered) && (
           <NavCollapseIcons
-            lockedIcon={<i className='tabler-circle-dot text-xl' />}
-            unlockedIcon={<i className='tabler-circle text-xl' />}
-            closeIcon={<i className='tabler-x text-xl' />}
+            lockedIcon={<i className='tabler-circle-dot text-sm text-white' />}
+            unlockedIcon={<i className='tabler-circle text-sm text-white' />}
+            closeIcon={<i className='tabler-x text-sm text-white' />}
             onClick={() => updateSettings({ layout: !isCollapsed ? 'collapsed' : 'vertical' })}
           />
         )}
