@@ -22,102 +22,102 @@ type DefaultSuggestionsType = {
 
 const defaultSuggestions: DefaultSuggestionsType[] = [
   {
-    sectionLabel: 'Popular Searches',
+    sectionLabel: 'معاونت های فعال',
     items: [
       {
-        label: 'Analytics',
-        href: '/dashboards/analytics',
-        icon: 'tabler-trending-up'
+        label: 'فناوری اطلاعات',
+        href: '#',
+        icon: 'tabler-device-desktop'
       },
       {
-        label: 'CRM',
-        href: '/dashboards/crm',
-        icon: 'tabler-chart-pie-2'
-      },
-      {
-        label: 'eCommerce',
-        href: '/dashboards/ecommerce',
-        icon: 'tabler-shopping-cart'
-      },
-      {
-        label: 'User List',
-        href: '/apps/user/list',
+        label: 'پژوهش',
+        href: '#',
         icon: 'tabler-file-description'
+      },
+      {
+        label: 'بین الملل',
+        href: '#',
+        icon: 'tabler-world'
+      },
+      {
+        label: 'پشتیبانی',
+        href: '#',
+        icon: 'tabler-lifebuoy'
       }
     ]
   },
   {
-    sectionLabel: 'Apps',
+    sectionLabel: 'نرم افزار های محبوب',
     items: [
       {
-        label: 'Calendar',
-        href: '/apps/calendar',
-        icon: 'tabler-calendar'
-      },
-      {
-        label: 'Invoice List',
-        href: '/apps/invoice/list',
+        label: 'تقویم',
+        href: '#',
         icon: 'tabler-file-info'
       },
       {
-        label: 'User List',
-        href: '/apps/user/list',
-        icon: 'tabler-file-invoice'
+        label: 'هوش مصنوعی',
+        href: '#',
+        icon: 'tabler-file-info'
       },
       {
-        label: 'Roles & Permissions',
-        href: '/apps/roles',
-        icon: 'tabler-lock'
+        label: 'ابزار ها',
+        href: '#',
+        icon: 'tabler-file-info'
+      },
+      {
+        label: 'تیکت',
+        href: '#',
+        icon: 'tabler-file-info'
       }
     ]
   },
   {
-    sectionLabel: 'Pages',
+    sectionLabel: 'صفحات کاربردی',
     items: [
       {
-        label: 'User Profile',
-        href: '/pages/user-profile',
-        icon: 'tabler-user'
+        label: 'پرسش و پاسخ AI',
+        href: '#',
+        icon: 'tabler-robot'
       },
       {
-        label: 'Account Settings',
-        href: '/pages/account-settings',
-        icon: 'tabler-settings'
+        label: 'رستوران',
+        href: '#',
+        icon: 'tabler-chef-hat'
       },
       {
-        label: 'Pricing',
-        href: '/pages/pricing',
-        icon: 'tabler-currency-dollar'
+        label: 'کیف پول',
+        href: '#',
+        icon: 'tabler-wallet'
       },
       {
-        label: 'FAQ',
-        href: '/pages/faq',
-        icon: 'tabler-help-circle'
+        label: 'تاریخچه',
+        href: '#',
+        icon: 'tabler-history-toggle'
       }
     ]
   },
   {
-    sectionLabel: 'Forms & Charts',
+    sectionLabel: 'نمونه',
     items: [
       {
-        label: 'Form Layouts',
-        href: '/forms/form-layouts',
+        label: 'تست',
+        href: '#',
         icon: 'tabler-layout'
       },
       {
-        label: 'Form Validation',
-        href: '/forms/form-validation',
-        icon: 'tabler-checkup-list'
+        label: 'تست',
+        href: '#',
+        icon: 'tabler-layout'
       },
       {
-        label: 'Form Wizard',
-        href: '/forms/form-wizard',
-        icon: 'tabler-git-merge'
+        label: 'تست',
+        href: '#',
+        icon: 'tabler-layout'
       },
       {
-        label: 'Apex Charts',
-        href: '/charts/apex-charts',
-        icon: 'tabler-chart-ppf'
+        label: 'تست',
+        href: '#',
+        icon: 'tabler-layout'
       }
     ]
   }

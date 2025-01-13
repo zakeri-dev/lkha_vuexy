@@ -123,17 +123,17 @@ const CommandFooter = () => {
         <kbd>
           <i className='tabler-arrow-down text-base' />
         </kbd>
-        <span>to navigate</span>
+        <span>برای جابجا شدن</span>
       </div>
       <div className='flex items-center gap-1'>
         <kbd>
           <i className='tabler-corner-down-left text-base' />
         </kbd>
-        <span>to open</span>
+        <span>برای باز کردن</span>
       </div>
       <div className='flex items-center gap-1'>
         <kbd>esc</kbd>
-        <span>to close</span>
+        <span>برای خروج</span>
       </div>
     </div>
   )
@@ -221,7 +221,7 @@ const NavSearch = () => {
           <IconButton className='text-textPrimary' onClick={() => setOpen(true)}>
             <i className='tabler-search text-2xl' />
           </IconButton>
-          <div className='whitespace-nowrap select-none text-textDisabled'>Search ⌘K</div>
+          <div className='whitespace-nowrap select-none text-textDisabled'>جستجو ⌘K</div>
         </div>
       )}
       <CommandDialog open={open} onOpenChange={setOpen}>

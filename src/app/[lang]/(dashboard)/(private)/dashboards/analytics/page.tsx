@@ -41,7 +41,7 @@ const DashboardAnalytics = async () => {
   return (
     <Grid container spacing={6}>
       <Grid size={{ xs: 12, lg: 6 }}>
-        <WebsiteAnalyticsSlider />
+        {/* <WebsiteAnalyticsSlider /> */}
       </Grid>
       <Grid size={{ xs: 12, sm: 6, lg: 3 }}>
         <LineAreaDailySalesChart />
