@@ -11,64 +11,51 @@ import AppsShortcut from '@/components/card-statistics/AppsShortcut'
 
 const defaultSlide = [
   {
-    title: 'On route vehicles',
-    stats: 42,
-    trendNumber: 18.2,
-    avatarIcon: 'tabler-truck',
+    title: 'چارگون',
+    stats: 'اتوماسیون اداری',
+    imageIcon: '/images/icons/chargoon.png',
     color: 'primary'
   },
   {
-    title: 'Vehicles with errors',
-    stats: 8,
-    trendNumber: -8.7,
-    avatarIcon: 'tabler-alert-triangle',
-    color: 'warning'
-  },
-  {
-    title: 'Deviated from route',
-    stats: 27,
-    trendNumber: 4.3,
-    avatarIcon: 'tabler-git-fork',
+    title: 'میزیتو',
+    stats: 'مدیریت پروژه',
+    imageIcon: '/images/icons/mizito.png',
     color: 'error'
   },
   {
-    title: 'Late vehicles',
-    stats: 13,
-    trendNumber: 2.5,
-    avatarIcon: 'tabler-clock',
+    title: 'فکور',
+    stats: 'آرشیو و مدیریت اسناد',
+    imageIcon: '/images/icons/fakoor2.png',
     color: 'info'
   },
   {
-    title: 'Late vehicles',
-    stats: 13,
-    trendNumber: 2.5,
-    avatarIcon: 'tabler-clock',
-    color: 'info'
+    title: 'رستوران',
+    stats: 'سامانه رزرو غذا',
+    imageIcon: '/images/icons/food.png',
+    color: 'warning'
   },
   {
-    title: 'Late vehicles',
-    stats: 13,
-    trendNumber: 2.5,
-    avatarIcon: 'tabler-clock',
-    color: 'info'
+    title: 'خدمات',
+    stats: 'سامانه رزرو غذا',
+    imageIcon: '/images/icons/MEET.png',
+    color: '#fff'
   },
   {
-    title: 'Late vehicles',
-    stats: 13,
-    trendNumber: 2.5,
-    avatarIcon: 'tabler-clock',
-    color: 'info'
+    title: 'سجاد',
+    stats: 'مدیریت پروژه',
+    imageIcon: '/images/icons/logo-b.png',
+    color: 'bg-black'
   }
 ]
 
 const ShortCutsApp = () => {
   return (
-    <Slider slidesPerView={5} className={'w-full overflow-hidden  object-cover !h-auto'}>
+    <Slider slidesPerView={5} className={'w-full overflow-hidden  object-cover !h-auto items-stretc'}>
       {defaultSlide?.map((item: any, i: number) => {
         // console.log(slide)
         return (
           <Fragment key={i}>
-            <div className='p-3'>
+            <div className='p-3 items-stretc h-full cursor-pointer'>
               <AppsShortcut {...item} />
             </div>
           </Fragment>

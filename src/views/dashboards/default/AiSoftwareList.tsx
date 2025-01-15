@@ -30,14 +30,18 @@ const data: DataType[] = [
 
 const AiSoftwareList = () => {
   return (
-    <Card className='h-full'>
-      <CardHeader
-        title='نرم افزار های هوشمند'
-        action={<OptionMenu options={['همه نرم افزارها', 'پیشنهاد نرم افزار']} />}
-      />
-      <CardContent className='flex flex-col gap-8'>
+    <Card className='h-full bg-white/0 shadow-none'>
+      <div className='flex items-center px-4'>
+        <i className='tabler-sparkles text-[22px]' />
+        <CardHeader
+          title='نرم افزار های هوشمند'
+          action={<OptionMenu options={['همه نرم افزارها', 'پیشنهاد نرم افزار']} />}
+          className='p-1 w-full justify-between'
+        />
+      </div>
+      <CardContent className='flex flex-col gap-3'>
         {data.map((item, i) => (
-          <div key={i} className='flex items-center gap-4'>
+          <div key={i} className='flex items-center gap-4 bg-white p-2 rounded-md'>
             <div className='relative flex items-center justify-center'>
               <CircularProgress
                 variant='determinate'

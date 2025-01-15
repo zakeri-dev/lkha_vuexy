@@ -18,7 +18,7 @@ import ActivityTimeline from '@views/dashboards/crm/ActivityTimeline'
 
 // Server Action Imports
 import { getServerMode } from '@core/utils/serverHelpers'
-import WebsiteAnalyticsSlider from '@/views/dashboards/default/WebsiteAnalyticsSlider'
+import WebsiteAnalyticsSlider from '@/views/dashboards/default/ContentSlider'
 import ShortCutsApp from '@/views/dashboards/default/ShortCutsApp'
 import { getLogisticsData, getStatisticsData } from '@/app/server/actions'
 

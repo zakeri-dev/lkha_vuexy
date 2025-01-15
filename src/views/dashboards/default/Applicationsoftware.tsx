@@ -31,11 +31,18 @@ const data: DataType[] = [
 
 const TopCourses = () => {
   return (
-    <Card className='h-full'>
-      <CardHeader title='نرم افزار های کاربردی' action={<OptionMenu options={['ابزارها', 'پیشنهاد ابزار']} />} />
-      <CardContent className='flex flex-col gap-6'>
+    <Card className='h-full bg-black/0 shadow-none'>
+      <div className='flex items-center px-4'>
+        <i className='tabler-layout-grid text-[22px]' />
+        <CardHeader
+          title='نرم افزار های کاربردی'
+          action={<OptionMenu options={['ابزارها', 'پیشنهاد ابزار']} />}
+          className='p-1 w-full justify-between'
+        />
+      </div>
+      <CardContent className='flex flex-col gap-3'>
         {data.map((item, i) => (
-          <div key={i} className='flex items-center gap-4'>
+          <div key={i} className='flex items-center gap-4 bg-white p-2 rounded-md'>
             <CustomAvatar variant='rounded' skin='light' color={item.color}>
               <i className={item.icon} />
             </CustomAvatar>

@@ -10,6 +10,8 @@ import classNames from 'classnames'
 
 import classnames from 'classnames'
 
+import { Divider, Typography } from '@mui/material'
+
 import DistributedBarChartOrder from '@views/dashboards/crm/DistributedBarChartOrder'
 import LineAreaYearlySalesChart from '@views/dashboards/crm/LineAreaYearlySalesChart'
 import CardStatVertical from '@/components/card-statistics/Vertical'
@@ -24,25 +26,24 @@ import ActivityTimeline from '@views/dashboards/crm/ActivityTimeline'
 
 // Server Action Imports
 import { getServerMode } from '@core/utils/serverHelpers'
-import WebsiteAnalyticsSlider from '@/views/dashboards/default/WebsiteAnalyticsSlider'
+import ContentSlider from '@/views/dashboards/default/ContentSlider'
 import ShortCutsApp from '@/views/dashboards/default/ShortCutsApp'
-import { getLogisticsData, getStatisticsData } from '@/app/server/actions'
-import TopCourses from '@/views/dashboards/default/TopCourses'
+import { getStatisticsData } from '@/app/server/actions'
+import Applicationsoftware from '@/views/dashboards/default/Applicationsoftware'
 import HodhodWelcome from '@/views/dashboards/default/HodhodWelcome'
 import AiSoftwareList from '@/views/dashboards/default/AiSoftwareList'
-import Slider from '@/components/slider/slider'
+import TabsCentered from '@/views/dashboards/default/components/TabsCentered'
 
 // filec: `${process.env.NEXT_PUBLIC_API__URL_images}/${data?.s3_image?.id}/${data?.s3_image?.filename_download}`
 
 const DashboardCRM = async () => {
   // Vars
   const serverMode = await getServerMode()
-  const data = await getStatisticsData()
 
   return (
     <Grid container spacing={6}>
       <Grid size={{ xs: 12, lg: 8 }}>
-        <WebsiteAnalyticsSlider />
+        <ContentSlider />
       </Grid>
       {/* <Grid size={{ xs: 12, sm: 6, lg: 2 }}>
         <></>
@@ -54,15 +55,22 @@ const DashboardCRM = async () => {
           height='100%'
           frameBorder='0'
           allowFullScreen
-          className=' rounded-lg'
+          className=' aspect-video rounded-lg'
         ></iframe>
       </Grid>
       <Grid size={{ xs: 12 }}>
         <ShortCutsApp />
       </Grid>
-      <Grid container spacing={4} className='bg-amber-300 p-6 rounded-md items-stretc'>
+      {/* <Grid size={{ xs: 12 }} className='pbs-12'>
+        <Typography variant='h3'>Navigation Cards</Typography>
+        <Divider />
+      </Grid> */}
+      <Grid size={{ xs: 12, md: 8 }}>
+        <TabsCentered />
+      </Grid>
+      <Grid container spacing={4} className='bg-amber-300/70 p-6 rounded-md items-stretc !border-0 !shadow-none'>
         <Grid size={{ xs: 12, sm: 6, md: 4 }}>
-          <TopCourses />
+          <Applicationsoftware />
         </Grid>
         <Grid size={{ xs: 12, sm: 6, md: 4 }}>
           <HodhodWelcome />
@@ -71,7 +79,7 @@ const DashboardCRM = async () => {
           <AiSoftwareList />
         </Grid>
       </Grid>
-      <Grid size={{ xs: 12, sm: 6, md: 4, lg: 2 }}>
+      {/* <Grid size={{ xs: 12, sm: 6, md: 4, lg: 2 }}>
         <DistributedBarChartOrder />
       </Grid>
       <Grid size={{ xs: 12, sm: 6, md: 4, lg: 2 }}>
@@ -104,11 +112,11 @@ const DashboardCRM = async () => {
           chipColor='success'
           chipVariant='tonal'
         />
-      </Grid>
-      <Grid size={{ xs: 12, md: 8, lg: 4 }}>
+      </Grid> */}
+      {/* <Grid size={{ xs: 12, md: 8, lg: 4 }}>
         <BarChartRevenueGrowth />
-      </Grid>
-      <Grid size={{ xs: 12, lg: 8 }}>
+      </Grid> */}
+      {/* <Grid size={{ xs: 12, lg: 8 }}>
         <EarningReportsWithTabs />
       </Grid>
       <Grid size={{ xs: 12, md: 6, lg: 4 }}>
@@ -128,7 +136,7 @@ const DashboardCRM = async () => {
       </Grid>
       <Grid size={{ xs: 12, md: 6 }}>
         <ActivityTimeline />
-      </Grid>
+      </Grid> */}
     </Grid>
   )
 }

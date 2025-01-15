@@ -6,20 +6,14 @@ import type { SyntheticEvent } from 'react'
 
 // MUI Imports
 import Tab from '@mui/material/Tab'
-import Typography from '@mui/material/Typography'
+import TabList from '@mui/lab/TabList'
 import TabPanel from '@mui/lab/TabPanel'
 import TabContext from '@mui/lab/TabContext'
-
-// Component Imports
+import Typography from '@mui/material/Typography'
 import axios from 'axios'
-
 import { Card } from '@mui/material'
 
-import classNames from 'classnames'
-
-import CustomTabList from '@core/components/mui/TabList'
-
-const CardWithTabs = () => {
+const TabsCentered = () => {
   // States
   const [value, setValue] = useState<string>('1')
   const [orgs, setOrgs] = useState<any[]>([])
@@ -32,7 +26,7 @@ const CardWithTabs = () => {
     const config = {
       method: 'get',
       maxBodyLength: Infinity,
-      url: 'https://cms.app.khi.local/items/org_chart?fields=title,id',
+      url: 'https://cms.app.khi.local/items/org_chart?fields=title,id&limit=5',
       headers: {}
     }
 
@@ -41,6 +35,7 @@ const CardWithTabs = () => {
       .then(response => {
         console.log(response.data.data)
         setOrgs(response.data?.data)
+        setValue(response.data?.data[0].id)
       })
       .catch(error => {
         console.log(error)
@@ -50,27 +45,19 @@ const CardWithTabs = () => {
   return (
     <Card className='p-4'>
       <TabContext value={value}>
-        <div className='flex'>
-          <CustomTabList
-            className=''
-            pill='true'
-            orientation='vertical'
-            onChange={handleChange}
-            aria-label='customized vertical tabs example'
-          >
-            {orgs.map((org: any) => (
-              <Tab key={org.id} value={org.id} label={org.title} className='whitespace-nowrap min-w-52 ' />
-            ))}
-          </CustomTabList>
+        <TabList centered onChange={handleChange} aria-label='centered tabs example'>
           {orgs.map((org: any) => (
-            <TabPanel key={org.id} value={org.id} className='bg- border rounded-md grow m-3'>
-              <Typography>{org.title}</Typography>
-            </TabPanel>
+            <Tab key={org.id} value={org.id} label={org.title} className='whitespace-nowrap ' />
           ))}
-        </div>
+        </TabList>
+        {orgs.map((org: any) => (
+          <TabPanel key={org.id} value={org.id} className='bg- border rounded-md grow m-3'>
+            <Typography>{org.title}</Typography>
+          </TabPanel>
+        ))}
       </TabContext>
     </Card>
   )
 }
 
-export default CardWithTabs
+export default TabsCentered

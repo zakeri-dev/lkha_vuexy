@@ -23,6 +23,19 @@ const nextConfig: NextConfig = {
         locale: false
       }
     ]
+  },
+  typescript: {
+    ignoreBuildErrors: true
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: process.env.NEXT_PUBLIC_CMS_PROTOCOL as 'http' | 'https',
+        hostname: `${process.env.NEXT_PUBLIC_CMS_URL}`,
+        port: `${process.env.NEXT_PUBLIC_CMS_PORT}`,
+        pathname: '/**'
+      }
+    ]
   }
 }
 

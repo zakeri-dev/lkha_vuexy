@@ -1,6 +1,8 @@
 'use client'
 
 // MUI Imports
+import Image from 'next/image'
+
 import MuiCard from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography'
@@ -38,20 +40,22 @@ const Card = styled(MuiCard)<Props>(({ color }) => ({
 
 const AppsShortcut = (props: CardStatsHorizontalWithBorderProps) => {
   // Props
-  const { title, stats, trendNumber, avatarIcon, color } = props
+  const { title, stats, imageIcon, avatarIcon, color } = props
 
   return (
-    <Card color={color || 'primary'}>
-      <CardContent className='flex flex-col gap-1'>
-        <div className='flex items-center gap-4'>
-          <CustomAvatar color={color} skin='light' variant='rounded'>
-            <i className={classnames(avatarIcon, 'text-[42px]')} />
-          </CustomAvatar>
-          <Typography variant='h4'>{stats}</Typography>
-        </div>
-        <div className='flex flex-col gap-1'>
+    <Card color={color || 'primary'} className='h-full'>
+      <CardContent className='flex max-md:flex-col gap-1 p-3 items-center'>
+        <CustomAvatar color={color} skin='light' variant='rounded' className='w-full md:w-1/2 h-full'>
+          {/* <i className={classnames(avatarIcon, 'text-[42px]')} /> */}
+          <Image src={imageIcon} alt='alt' width={100} height={100} unoptimized className='p-3' />
+        </CustomAvatar>
+        <Typography variant='h4' className='w-full text-center'>
+          {title}
+        </Typography>
+
+        {/* <div className='flex flex-col gap-1'>
           <Typography>{title}</Typography>
-          {/* <div className='flex items-center gap-2'>
+          <div className='flex items-center gap-2'>
             <Typography
               color='text.primary'
               className='font-medium'
@@ -59,9 +63,10 @@ const AppsShortcut = (props: CardStatsHorizontalWithBorderProps) => {
             <Typography variant='body2' color='text.disabled'>
               than last week
             </Typography>
-          </div> */}
-        </div>
+          </div>
+        </div> */}
       </CardContent>
+      {/* <Typography className='text-center pb-1'>{stats}</Typography> */}
     </Card>
   )
 }
