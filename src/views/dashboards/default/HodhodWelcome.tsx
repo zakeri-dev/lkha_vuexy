@@ -22,22 +22,26 @@ const data: DataType[] = [
   { icon: 'tabler-clock', title: '32 Minutes', value: 'Duration' }
 ]
 
-const UpcomingWebinar = () => {
+const HodhodWelcome = () => {
   return (
-    <Card>
+    <Card className='h-full'>
       <CardContent className='flex flex-col gap-4'>
-        <div className='flex justify-center pli-2.5 pbs-4 rounded bg-primaryLight'>
-          <img src='/images/illustrations/characters/4.png' className='bs-[146px]' />
+        <div className='flex justify-center rounded bg-primaryLight aspect-video overflow-hidden'>
+          <img
+            src='/images/illustrations/characters/hodhod.jpg'
+            className='w-full object-cover
+           '
+          />
         </div>
         <div>
-          <Typography variant='h5' className='mbe-2'>
-            Upcoming Webinar
+          <Typography variant='h5' className='mbe-2 text-center'>
+            گفتگو با هدهد
           </Typography>
-          <Typography variant='body2'>
-            Next Generation Frontend Architecture Using Layout Engine And React Native Web.
+          <Typography variant='body2' className=' text-center'>
+            سلام همکار خوبم، من هدهد هستم. اومدم تا در مسیری که هستی کمکت کنم! آماده ای شروع کنیم؟
           </Typography>
         </div>
-        <div className='flex flex-wrap justify-between gap-4'>
+        {/* <div className='flex flex-wrap justify-between gap-4'>
           {data.map((item, i) => (
             <div key={i} className='flex items-center gap-3'>
               <CustomAvatar variant='rounded' skin='light' color='primary'>
@@ -51,11 +55,13 @@ const UpcomingWebinar = () => {
               </div>
             </div>
           ))}
-        </div>
-        <Button variant='contained'>Join the event</Button>
+        </div> */}
+        <Button variant='contained' className='blur-[1px]' disableElevation>
+          آغاز گفتگو (به زودی)
+        </Button>
       </CardContent>
     </Card>
   )
 }
 
-export default UpcomingWebinar
+export default HodhodWelcome

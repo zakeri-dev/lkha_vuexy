@@ -4,6 +4,8 @@ import Grid from '@mui/material/Grid2'
 // Component Imports
 import classNames from 'classnames'
 
+import classnames from 'classnames'
+
 import DistributedBarChartOrder from '@views/dashboards/crm/DistributedBarChartOrder'
 import LineAreaYearlySalesChart from '@views/dashboards/crm/LineAreaYearlySalesChart'
 import CardStatVertical from '@/components/card-statistics/Vertical'
@@ -22,8 +24,8 @@ import WebsiteAnalyticsSlider from '@/views/dashboards/default/WebsiteAnalyticsS
 import LogisticsStatisticsCard from '@/views/dashboards/default/LogisticsStatisticsCard'
 import { getLogisticsData, getStatisticsData } from '@/app/server/actions'
 import TopCourses from '@/views/dashboards/default/TopCourses'
-import UpcomingWebinar from '@/views/dashboards/default/UpcomingWebinar'
-import AssignmentProgress from '@/views/dashboards/default/AssignmentProgress'
+import HodhodWelcome from '@/views/dashboards/default/HodhodWelcome'
+import AiSoftwareList from '@/views/dashboards/default/AiSoftwareList'
 
 const DashboardCRM = async () => {
   // Vars
@@ -32,12 +34,12 @@ const DashboardCRM = async () => {
 
   return (
     <Grid container spacing={6}>
-      <Grid size={{ xs: 12, lg: 6 }}>
+      <Grid size={{ xs: 12, lg: 8 }}>
         <WebsiteAnalyticsSlider />
       </Grid>
-      <Grid size={{ xs: 12, sm: 6, lg: 2 }}>
+      {/* <Grid size={{ xs: 12, sm: 6, lg: 2 }}>
         <></>
-      </Grid>
+      </Grid> */}
       <Grid size={{ xs: 12, sm: 6, lg: 4 }} className='bg-black rounded-lg overflow-hidden p-1'>
         <iframe
           src='http://192.168.5.81:8080/e3edc038-38e0-444c-9040-91808c71ea51.html'
@@ -51,14 +53,16 @@ const DashboardCRM = async () => {
       <Grid size={{ xs: 12 }}>
         <LogisticsStatisticsCard data={data?.statsHorizontalWithBorder} />
       </Grid>
-      <Grid size={{ xs: 12, sm: 6, md: 4 }}>
-        <TopCourses />
-      </Grid>
-      <Grid size={{ xs: 12, sm: 6, md: 4 }}>
-        <UpcomingWebinar />
-      </Grid>
-      <Grid size={{ xs: 12, sm: 6, md: 4 }}>
-        <AssignmentProgress />
+      <Grid container spacing={6} className='bg-amber-300/70 p-2 rounded-md items-stretc'>
+        <Grid size={{ xs: 12, sm: 6, md: 4 }}>
+          <TopCourses />
+        </Grid>
+        <Grid size={{ xs: 12, sm: 6, md: 4 }}>
+          <HodhodWelcome />
+        </Grid>
+        <Grid size={{ xs: 12, sm: 6, md: 4 }}>
+          <AiSoftwareList />
+        </Grid>
       </Grid>
       <Grid size={{ xs: 12, sm: 6, md: 4, lg: 2 }}>
         <DistributedBarChartOrder />

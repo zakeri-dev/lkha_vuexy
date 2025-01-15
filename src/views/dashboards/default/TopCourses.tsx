@@ -11,6 +11,7 @@ import type { ThemeColor } from '@core/types'
 // Components Imports
 import CustomAvatar from '@core/components/mui/Avatar'
 import OptionMenu from '@core/components/option-menu'
+import CustomIconButton from '@/@core/components/mui/IconButton'
 
 type DataType = {
   title: string
@@ -21,17 +22,17 @@ type DataType = {
 
 // Vars
 const data: DataType[] = [
-  { title: 'Videography Basic Design Course', views: '1.2k', icon: 'tabler-video', color: 'primary' },
-  { title: 'Basic Front-end Development Course', views: '834', icon: 'tabler-code', color: 'info' },
-  { title: 'Basic Fundamentals of Photography', views: '3.7k', icon: 'tabler-camera', color: 'success' },
-  { title: 'Advance Dribble Base Visual Design', views: '2.5k', icon: 'tabler-brand-dribbble', color: 'warning' },
-  { title: 'Your First Singing Lesson', views: '948', icon: 'tabler-microphone-2', color: 'error' }
+  { title: 'دفترچه تلفن', views: '948', icon: 'tabler-phone', color: 'primary' },
+  { title: 'ابزار های ویرایش فایل pdf', views: '1.2k', icon: 'tabler-pdf', color: 'error' },
+  { title: 'وایت بورد ساده', views: '834', icon: 'tabler-pencil', color: 'info' },
+  { title: 'ارسال ایمین فایل همکاران', views: '2.5k', icon: 'tabler-share', color: 'warning' },
+  { title: 'وایت بورد پیشرفته', views: '3.7k', icon: 'tabler-chalkboard', color: 'success' }
 ]
 
 const TopCourses = () => {
   return (
-    <Card>
-      <CardHeader title='Top Courses' action={<OptionMenu options={['Last 28 Days', 'Last Month', 'Last Year']} />} />
+    <Card className='h-full'>
+      <CardHeader title='نرم افزار های کاربردی' action={<OptionMenu options={['ابزارها', 'پیشنهاد ابزار']} />} />
       <CardContent className='flex flex-col gap-6'>
         {data.map((item, i) => (
           <div key={i} className='flex items-center gap-4'>
@@ -42,7 +43,11 @@ const TopCourses = () => {
               <Typography className='font-medium flex-1' color='text.primary'>
                 {item.title}
               </Typography>
-              <Chip label={`${item.views} Views`} variant='tonal' size='small' color='secondary' />
+              {/* <Chip label={`${item.views} Views`} variant='tonal' size='small' color='secondary' /> */}
+              <CustomIconButton size='small' variant='tonal' color='secondary' className='min-is-fit'>
+                {/* <DirectionalIcon ltrIconClass='tabler-chevron-right' rtlIconClass='tabler-chevron-left' /> */}
+                <span className='text-sm'>به زودی</span>
+              </CustomIconButton>
             </div>
           </div>
         ))}

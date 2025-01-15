@@ -15,23 +15,26 @@ import DirectionalIcon from '@components/DirectionalIcon'
 
 type DataType = {
   title: string
-  tasks: number
+  tasks: string
   progress: number
   color: ThemeColor
 }
 
 // Vars
 const data: DataType[] = [
-  { title: 'User Experience Design', tasks: 120, progress: 72, color: 'primary' },
-  { title: 'Basic fundamentals', tasks: 32, progress: 48, color: 'success' },
-  { title: 'React Native components', tasks: 182, progress: 15, color: 'error' },
-  { title: 'Basic of music theory', tasks: 56, progress: 24, color: 'info' }
+  { title: 'مدل های هوشمند زبانی', tasks: 'فراهم سازی گفتگو ایمن باهوش مصنوعی', progress: 68, color: 'primary' },
+  { title: 'VOD هوشمند', tasks: 'تلویزیون اینترنتی هوشمند', progress: 60, color: 'info' },
+  { title: 'پرسش و پاسخ استفتائات', tasks: 'پاسخگویی به سوالات شرعی', progress: 48, color: 'success' },
+  { title: 'کتابخانه هوشمند', tasks: 'جستجو هوشمند در آثار امام خامنه ای', progress: 15, color: 'error' }
 ]
 
-const AssignmentProgress = () => {
+const AiSoftwareList = () => {
   return (
-    <Card>
-      <CardHeader title='Assignment Progress' action={<OptionMenu options={['Refresh', 'Update', 'Share']} />} />
+    <Card className='h-full'>
+      <CardHeader
+        title='نرم افزار های هوشمند'
+        action={<OptionMenu options={['همه نرم افزارها', 'پیشنهاد نرم افزار']} />}
+      />
       <CardContent className='flex flex-col gap-8'>
         {data.map((item, i) => (
           <div key={i} className='flex items-center gap-4'>
@@ -60,10 +63,11 @@ const AssignmentProgress = () => {
                 <Typography className='font-medium mbe-1.5' color='text.primary'>
                   {item.title}
                 </Typography>
-                <Typography variant='body2'>{`${item.tasks} Tasks`}</Typography>
+                <Typography variant='body2'>{`${item.tasks}`}</Typography>
               </div>
               <CustomIconButton size='small' variant='tonal' color='secondary' className='min-is-fit'>
-                <DirectionalIcon ltrIconClass='tabler-chevron-right' rtlIconClass='tabler-chevron-left' />
+                {/* <DirectionalIcon ltrIconClass='tabler-chevron-right' rtlIconClass='tabler-chevron-left' /> */}
+                <span className='text-sm'>به زودی</span>
               </CustomIconButton>
             </div>
           </div>
@@ -73,4 +77,4 @@ const AssignmentProgress = () => {
   )
 }
 
-export default AssignmentProgress
+export default AiSoftwareList
