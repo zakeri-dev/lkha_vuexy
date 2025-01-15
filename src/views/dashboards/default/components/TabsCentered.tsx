@@ -17,6 +17,7 @@ const TabsCentered = () => {
   // States
   const [value, setValue] = useState<string>('1')
   const [orgs, setOrgs] = useState<any[]>([])
+  const [orgsContent, setOrgsContent] = useState({})
 
   const handleChange = (event: SyntheticEvent, newValue: string) => {
     setValue(newValue)
@@ -34,13 +35,37 @@ const TabsCentered = () => {
       .request(config)
       .then(response => {
         console.log(response.data.data)
-        setOrgs(response.data?.data)
         setValue(response.data?.data[0].id)
+        setOrgs(response.data?.data)
+        response.data.data.map((org: any) => {
+          GetContent(org.id)
+        })
       })
       .catch(error => {
         console.log(error)
       })
   }, [])
+
+  function GetContent(orgid: any) {
+    const config = {
+      method: 'get',
+      maxBodyLength: Infinity,
+      url: `https://cms.app.khi.local/items/article?fields=*.*.*&filter[ref_org_chart][item:org_chart][id][_eq]=${id || 1}`,
+      headers: {}
+    }
+
+    axios
+      .request(config)
+      .then(response => {
+        console.log(response.data?.data)
+        setOrgsContent({ ...orgsContent})
+      })
+      .catch(error => {
+        console.log(error)
+      })
+  }
+
+  console.log(orgsContent)
 
   return (
     <Card className='p-4'>
@@ -52,7 +77,7 @@ const TabsCentered = () => {
         </TabList>
         {orgs.map((org: any) => (
           <TabPanel key={org.id} value={org.id} className='bg- border rounded-md grow m-3'>
-            <Typography>{org.title}</Typography>
+            {}
           </TabPanel>
         ))}
       </TabContext>

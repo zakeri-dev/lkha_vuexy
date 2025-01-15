@@ -42,14 +42,14 @@ const ContentSlider = () => {
 
         return (
           <Fragment key={i}>
-            <div className='relative w-full h-full flex items-end p-5'>
+            <div className='relative w-full h-full flex items-end'>
               <div className='absolute bottom-0 left-0 w-full h-1/2 z-10 bg-gradient-to-t from-black'></div>
               <img
                 src={`${process.env.NEXT_PUBLIC_CMS_URL_ASSETS}/${slide?.image?.id}/${slide?.image?.filename_download}`}
                 alt='slide'
                 className='absolute top-0 left-0 w-full h-full object-cover z-0'
               />
-              <div>
+              <div className='p-5'>
                 <span className='relative z-10 text-primary text-base font-bold'>معاونت</span>
                 <h1 className='relative z-10 text-white text-xl'>{slide.Title}</h1>
               </div>

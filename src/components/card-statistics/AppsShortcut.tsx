@@ -43,7 +43,7 @@ const AppsShortcut = (props: CardStatsHorizontalWithBorderProps) => {
   const { title, stats, imageIcon, avatarIcon, color } = props
 
   return (
-    <Card color={color || 'primary'} className='h-full'>
+    <Card color={color || 'primary'} className=''>
       <CardContent className='flex max-md:flex-col gap-1 p-3 items-center'>
         <CustomAvatar color={color} skin='light' variant='rounded' className='w-full md:w-1/2 h-full'>
           {/* <i className={classnames(avatarIcon, 'text-[42px]')} /> */}

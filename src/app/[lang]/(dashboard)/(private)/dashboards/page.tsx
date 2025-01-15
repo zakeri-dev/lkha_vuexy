@@ -33,6 +33,7 @@ import Applicationsoftware from '@/views/dashboards/default/Applicationsoftware'
 import HodhodWelcome from '@/views/dashboards/default/HodhodWelcome'
 import AiSoftwareList from '@/views/dashboards/default/AiSoftwareList'
 import TabsCentered from '@/views/dashboards/default/components/TabsCentered'
+import CustomerPlan from '@/views/dashboards/default/components/CustomerPlan'
 
 // filec: `${process.env.NEXT_PUBLIC_API__URL_images}/${data?.s3_image?.id}/${data?.s3_image?.filename_download}`
 
@@ -67,6 +68,9 @@ const DashboardCRM = async () => {
       </Grid> */}
       <Grid size={{ xs: 12, md: 8 }}>
         <TabsCentered />
+      </Grid>
+      <Grid size={{ xs: 12, md: 4 }}>
+        <CustomerPlan />
       </Grid>
       <Grid container spacing={4} className='bg-amber-300/70 p-6 rounded-md items-stretc !border-0 !shadow-none'>
         <Grid size={{ xs: 12, sm: 6, md: 4 }}>

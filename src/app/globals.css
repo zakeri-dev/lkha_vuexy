@@ -137,6 +137,6 @@ span.swiper-pagination-bullet {
 }
 .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
   display: flex;
-  flex-direction: row-reverse;
-  padding-inline-start: 5px;
+  justify-content: flex-end;
+  padding: 5px;
 }
