@@ -14,7 +14,7 @@ import axios from 'axios'
 import PhoneCard from './PhoneCard'
 import CustomTextField from '@/@core/components/mui/TextField'
 
-const CustomerPlan = () => {
+const Phone = () => {
   // Vars
 
   const [user, setUser] = useState<string>({})
@@ -77,7 +77,7 @@ const CustomerPlan = () => {
               </>
             )}
           </div>
-          <img src='/images/icons/phone.png' className='-mis-7 -mbe-7 w-32' />
+          <img src='/images/icons/phone.png' className='-mis-7 -mbe-7 w-24' />
         </div>
       </CardContent>
 
@@ -94,7 +94,7 @@ const CustomerPlan = () => {
   )
 }
 
-export default CustomerPlan
+export default Phone
 
 // function Cardcontent() {
 //   return (

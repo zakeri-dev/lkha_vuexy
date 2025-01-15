@@ -113,7 +113,7 @@ const VerticalMenu = ({ dictionary, scrollMenu }: Props) => {
         }}
       >
         <MenuItem href='/dashboards' icon={<i className='tabler-smart-home' />}>
-          پیش‌خوان
+          پیشخوان
         </MenuItem>
         {/* <SubMenu
           label='پیش‌خوان'
@@ -135,7 +135,44 @@ const VerticalMenu = ({ dictionary, scrollMenu }: Props) => {
           <MenuItem href='#'>رسانه</MenuItem>
           <MenuItem href='#'>منابع انسانی</MenuItem>
         </SubMenu>
-        <MenuSection label={dictionary['navigation'].appsPages}>
+        <SubMenu label='مدیریت فایل' icon={<i className='tabler-folders' />}>
+          <MenuItem href='#'>فناوری اطلاعات</MenuItem>
+          <MenuItem href='#'>پژوهش</MenuItem>
+          <MenuItem href='#'>بین الملل</MenuItem>
+          <MenuItem href='#'>برنامه ریزی و امور اجرایی</MenuItem>
+          <MenuItem href='#'>فرهنگی</MenuItem>
+          <MenuItem href='#'>رسانه</MenuItem>
+          <MenuItem href='#'>منابع انسانی</MenuItem>
+        </SubMenu>
+        <SubMenu label='پشتیبانی' icon={<i className='tabler-lifebuoy
+' />}>
+          <MenuItem href='#'>فناوری اطلاعات</MenuItem>
+          <MenuItem href='#'>پژوهش</MenuItem>
+          <MenuItem href='#'>بین الملل</MenuItem>
+          <MenuItem href='#'>برنامه ریزی و امور اجرایی</MenuItem>
+          <MenuItem href='#'>فرهنگی</MenuItem>
+          <MenuItem href='#'>رسانه</MenuItem>
+          <MenuItem href='#'>منابع انسانی</MenuItem>
+        </SubMenu>
+        <SubMenu label='ارتباطات' icon={<i className='tabler-affiliate' />}>
+          <MenuItem href='#'>فناوری اطلاعات</MenuItem>
+          <MenuItem href='#'>پژوهش</MenuItem>
+          <MenuItem href='#'>بین الملل</MenuItem>
+          <MenuItem href='#'>برنامه ریزی و امور اجرایی</MenuItem>
+          <MenuItem href='#'>فرهنگی</MenuItem>
+          <MenuItem href='#'>رسانه</MenuItem>
+          <MenuItem href='#'>منابع انسانی</MenuItem>
+        </SubMenu>
+        <SubMenu label='تنظیمات' icon={<i className='tabler-settings' />}>
+          <MenuItem href='#'>فناوری اطلاعات</MenuItem>
+          <MenuItem href='#'>پژوهش</MenuItem>
+          <MenuItem href='#'>بین الملل</MenuItem>
+          <MenuItem href='#'>برنامه ریزی و امور اجرایی</MenuItem>
+          <MenuItem href='#'>فرهنگی</MenuItem>
+          <MenuItem href='#'>رسانه</MenuItem>
+          <MenuItem href='#'>منابع انسانی</MenuItem>
+        </SubMenu>
+        {/* <MenuSection label={dictionary['navigation'].appsPages}>
           <SubMenu label={dictionary['navigation'].eCommerce} icon={<i className='tabler-shopping-cart' />}>
             <MenuItem href={`/${locale}/apps/ecommerce/dashboard`}>{dictionary['navigation'].dashboard}</MenuItem>
             <SubMenu label={dictionary['navigation'].products}>
@@ -411,7 +448,7 @@ const VerticalMenu = ({ dictionary, scrollMenu }: Props) => {
             </SubMenu>
             <MenuItem disabled>{dictionary['navigation'].disabledMenu}</MenuItem>
           </SubMenu>
-        </MenuSection>
+        </MenuSection> */}
       </Menu>
       {/* <Menu
         popoutMenuOffset={{ mainAxis: 23 }}

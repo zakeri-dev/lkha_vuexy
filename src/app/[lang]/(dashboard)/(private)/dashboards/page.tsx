@@ -1,45 +1,23 @@
 // MUI Imports
-import { Fragment } from 'react'
-
-import Image from 'next/image'
 
 import Grid from '@mui/material/Grid2'
 
-// Component Imports
+// Server Action Imports
 import classNames from 'classnames'
 
-import classnames from 'classnames'
-
-import { Divider, Typography } from '@mui/material'
-
-import DistributedBarChartOrder from '@views/dashboards/crm/DistributedBarChartOrder'
-import LineAreaYearlySalesChart from '@views/dashboards/crm/LineAreaYearlySalesChart'
-import CardStatVertical from '@/components/card-statistics/Vertical'
-import BarChartRevenueGrowth from '@views/dashboards/crm/BarChartRevenueGrowth'
-import EarningReportsWithTabs from '@views/dashboards/crm/EarningReportsWithTabs'
-import RadarSalesChart from '@views/dashboards/crm/RadarSalesChart'
-import SalesByCountries from '@views/dashboards/crm/SalesByCountries'
-import ProjectStatus from '@views/dashboards/crm/ProjectStatus'
-import ActiveProjects from '@views/dashboards/crm/ActiveProjects'
-import LastTransaction from '@views/dashboards/crm/LastTransaction'
-import ActivityTimeline from '@views/dashboards/crm/ActivityTimeline'
-
-// Server Action Imports
-import { getServerMode } from '@core/utils/serverHelpers'
 import ContentSlider from '@/views/dashboards/default/ContentSlider'
 import ShortCutsApp from '@/views/dashboards/default/ShortCutsApp'
-import { getStatisticsData } from '@/app/server/actions'
 import Applicationsoftware from '@/views/dashboards/default/Applicationsoftware'
 import HodhodWelcome from '@/views/dashboards/default/HodhodWelcome'
 import AiSoftwareList from '@/views/dashboards/default/AiSoftwareList'
 import TabsCentered from '@/views/dashboards/default/components/TabsCentered'
-import CustomerPlan from '@/views/dashboards/default/components/CustomerPlan'
+import Phone from '@/views/dashboards/default/components/Phone'
+import Baner from '@/views/dashboards/default/components/Baner'
 
 // filec: `${process.env.NEXT_PUBLIC_API__URL_images}/${data?.s3_image?.id}/${data?.s3_image?.filename_download}`
 
 const DashboardCRM = async () => {
   // Vars
-  const serverMode = await getServerMode()
 
   return (
     <Grid container spacing={6}>
@@ -70,7 +48,10 @@ const DashboardCRM = async () => {
         <TabsCentered />
       </Grid>
       <Grid size={{ xs: 12, md: 4 }}>
-        <CustomerPlan />
+        <div className='flex flex-col gap-3'>
+          <Phone />
+          <Baner />
+        </div>
       </Grid>
       <Grid container spacing={4} className='bg-amber-300/70 p-6 rounded-md items-stretc !border-0 !shadow-none'>
         <Grid size={{ xs: 12, sm: 6, md: 4 }}>

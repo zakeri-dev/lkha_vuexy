@@ -9,15 +9,19 @@ import Tab from '@mui/material/Tab'
 import TabList from '@mui/lab/TabList'
 import TabPanel from '@mui/lab/TabPanel'
 import TabContext from '@mui/lab/TabContext'
-import Typography from '@mui/material/Typography'
 import axios from 'axios'
-import { Card } from '@mui/material'
+import { Card, Grid2 } from '@mui/material'
+
+import { Grid } from 'swiper/modules'
+
+import BrowserStates from './ListOfContent'
+import ContentCardWithUser from './ContentCardWithUser'
 
 const TabsCentered = () => {
   // States
   const [value, setValue] = useState<string>('1')
   const [orgs, setOrgs] = useState<any[]>([])
-  const [orgsContent, setOrgsContent] = useState({})
+  const [orgsContent, setOrgsContent] = useState<{ [key: string]: any[] }>({})
 
   const handleChange = (event: SyntheticEvent, newValue: string) => {
     setValue(newValue)
@@ -34,7 +38,7 @@ const TabsCentered = () => {
     axios
       .request(config)
       .then(response => {
-        console.log(response.data.data)
+        // console.log(response.data.data)
         setValue(response.data?.data[0].id)
         setOrgs(response.data?.data)
         response.data.data.map((org: any) => {
@@ -50,22 +54,24 @@ const TabsCentered = () => {
     const config = {
       method: 'get',
       maxBodyLength: Infinity,
-      url: `https://cms.app.khi.local/items/article?fields=*.*.*&filter[ref_org_chart][item:org_chart][id][_eq]=${id || 1}`,
+      url: `https://cms.app.khi.local/items/article?fields=*.*.*&filter[ref_org_chart][item:org_chart][id][_eq]=${orgid}`,
       headers: {}
     }
 
     axios
       .request(config)
       .then(response => {
-        console.log(response.data?.data)
-        setOrgsContent({ ...orgsContent})
+        // console.log(response.data?.data)
+        setOrgsContent(orgsContent => ({ ...orgsContent, [orgid]: response.data?.data }))
       })
       .catch(error => {
         console.log(error)
       })
   }
 
-  console.log(orgsContent)
+  // console.log(orgsContent['2'])
+
+  // console.log(orgs)
 
   return (
     <Card className='p-4'>
@@ -76,8 +82,19 @@ const TabsCentered = () => {
           ))}
         </TabList>
         {orgs.map((org: any) => (
-          <TabPanel key={org.id} value={org.id} className='bg- border rounded-md grow m-3'>
-            {}
+          <TabPanel key={org.id} value={org.id} className=''>
+            <Grid2 container spacing={6}>
+              <Grid2 size={{ xs: 12, md: 6 }}>
+                {orgsContent[org.id] ? <BrowserStates data={orgsContent[org.id]} /> : null}
+              </Grid2>
+              <Grid2 size={{ xs: 12, md: 6 }}>
+                {orgsContent[org.id] && orgsContent[org.id].length > 0 ? (
+                  <ContentCardWithUser data={orgsContent[org.id][0]} />
+                ) : (
+                  <></>
+                )}
+              </Grid2>
+            </Grid2>
           </TabPanel>
         ))}
       </TabContext>

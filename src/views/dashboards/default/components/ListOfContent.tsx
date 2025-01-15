@@ -1,0 +1,116 @@
+'use client'
+
+// MUI Imports
+import Card from '@mui/material/Card'
+import CardHeader from '@mui/material/CardHeader'
+import CardContent from '@mui/material/CardContent'
+import Typography from '@mui/material/Typography'
+import CircularProgress from '@mui/material/CircularProgress'
+
+import type { ThemeColor } from '@core/types'
+
+// type DataType = {
+//   title: string
+//   imgSrc: string
+//   progress: number
+//   percentage: string
+//   progressColor: ThemeColor
+// }
+
+// Vars
+// const data: DataType[] = [
+//   {
+//     title: 'Google Chrome',
+//     progress: 67,
+//     percentage: '54.4%',
+//     progressColor: 'primary',
+//     imgSrc: '/images/logos/google-chrome.png'
+//   },
+//   {
+//     title: 'Apple Safari',
+//     progress: 40,
+//     percentage: '14.6%',
+//     progressColor: 'success',
+//     imgSrc: '/images/logos/safari.png'
+//   },
+//   {
+//     title: 'Mozilla Firefox',
+//     progress: 30,
+//     percentage: '6.1%',
+//     progressColor: 'secondary',
+//     imgSrc: '/images/logos/mozilla-firefox.png'
+//   },
+//   {
+//     title: 'Opera Mini',
+//     progress: 20,
+//     percentage: '8.0%',
+//     progressColor: 'info',
+//     imgSrc: '/images/logos/opera-mini.png'
+//   },
+//   {
+//     title: 'Internet Explorer',
+//     progress: 15,
+//     percentage: '4.2%',
+//     progressColor: 'warning',
+//     imgSrc: '/images/logos/internet-explorer.png'
+//   },
+//   {
+//     title: 'Brave',
+//     progress: 15,
+//     percentage: '0.3%',
+//     progressColor: 'error',
+//     imgSrc: '/images/logos/brave.png'
+//   }
+// ]
+
+const BrowserStates = ({ data }: any) => {
+  console.log(data)
+
+  return (
+    <Card className=' shadow-none bg-white/0 !p-0 h-full'>
+      <Typography className='font-bold'>آخرین مطالب:</Typography>
+      <CardContent className='flex flex-col gap-4 !px-0'>
+        {data?.slice(1)?.map((item: any, index: number) => (
+          <div
+            key={index}
+            className='group flex items-center gap-4 p-2 hover:bg-[#182da3] hover:text-white rounded-md transform duration-150 cursor-pointer'
+          >
+            <img
+              src={`${process.env.NEXT_PUBLIC_CMS_URL_ASSETS}/${item?.Thumb?.id}/${item?.Thumb?.filename_download}`}
+              alt={item.title}
+              className='w-20 aspect-video object-cover rounded-sm'
+            />
+            <Typography className='font-bold group-hover:text-white transform duration-150'>{item.title}</Typography>
+            {/* <div className='flex flex-wrap justify-between items-center gap-x-4 gap-y-1 is-full'>
+              <Typography className='font-medium' color='text.primary'>
+                {item.title}
+              </Typography>
+              <div className='flex items-center gap-4'>
+                <Typography>{item.percentage}</Typography>
+                <div className='flex relative'>
+                  <CircularProgress
+                    variant='determinate'
+                    size={26}
+                    value={100}
+                    thickness={5}
+                    sx={{ position: 'absolute', color: 'var(--mui-palette-customColors-trackBg)' }}
+                  />
+                  <CircularProgress
+                    variant='determinate'
+                    size={26}
+                    value={item.progress}
+                    thickness={5}
+                    color={item.progressColor}
+                    sx={{ '& .MuiCircularProgress-circle': { strokeLinecap: 'round' } }}
+                  />
+                </div>
+              </div>
+            </div> */}
+          </div>
+        ))}
+      </CardContent>
+    </Card>
+  )
+}
+
+export default BrowserStates
