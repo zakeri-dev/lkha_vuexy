@@ -54,7 +54,7 @@ const AccountDetails = () => {
   // States
   const [formData, setFormData] = useState<Data>(initialData)
   const [fileInput, setFileInput] = useState<string>('')
-  const [imgSrc, setImgSrc] = useState<string>('/images/avatars/1.png')
+  const [imgSrc, setImgSrc] = useState<string>('/images/avatars/avataruser.png')
   const [language, setLanguage] = useState<string[]>(['English'])
 
   const handleDelete = (value: string) => {
@@ -85,7 +85,7 @@ const AccountDetails = () => {
 
   const handleFileInputReset = () => {
     setFileInput('')
-    setImgSrc('/images/avatars/1.png')
+    setImgSrc('/images/avatars/avataruser.png')
   }
 
   return (

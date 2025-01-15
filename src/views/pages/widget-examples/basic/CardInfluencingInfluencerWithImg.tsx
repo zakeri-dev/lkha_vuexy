@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography'
 const CardInfluencingInfluencerWithImg = () => {
   return (
     <Card>
-      <CardMedia image='/images/cards/1.png' className='bs-[200px]' />
+      <CardMedia image='/images/cards/avataruser.png' className='bs-[200px]' />
       <CardContent>
         <Typography variant='h5' className='mbe-2'>
           Influencing The Influencer

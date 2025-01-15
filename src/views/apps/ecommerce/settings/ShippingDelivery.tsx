@@ -108,7 +108,7 @@ const ShippingDelivery = () => {
         sx={{ '& .MuiCardHeader-action': { alignSelf: 'center' } }}
       />
       <CardContent className='flex flex-col gap-6'>
-        <ShippingRateCard title='Domestic' avatar='/images/avatars/1.png' data={domesticTableData} />
+        <ShippingRateCard title='Domestic' avatar='/images/avatars/avataruser.png' data={domesticTableData} />
         <ShippingRateCard title='International' avatar='/images/cards/us.png' data={internationalTableData} />
       </CardContent>
     </Card>

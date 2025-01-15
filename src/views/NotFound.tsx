@@ -53,7 +53,7 @@ const NotFound = ({ mode }: { mode: SystemMode }) => {
         </Button>
         <img
           alt='error-404-illustration'
-          src='/images/illustrations/characters/1.png'
+          src='/images/illustrations/characters/avataruser.png'
           className='object-cover bs-[400px] md:bs-[450px] lg:bs-[500px] mbs-10 md:mbs-14 lg:mbs-20'
         />
       </div>

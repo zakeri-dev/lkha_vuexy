@@ -8,7 +8,7 @@ export const db: EmailType = {
       from: {
         email: 'tommys@mail.com',
         name: 'Tommy Sicilia',
-        avatar: '/images/avatars/1.png'
+        avatar: '/images/avatars/avataruser.png'
       },
       to: [
         {
@@ -191,7 +191,7 @@ export const db: EmailType = {
       from: {
         email: 'swilby2@yandex.ru',
         name: 'Shawn Wilby',
-        avatar: '/images/avatars/1.png'
+        avatar: '/images/avatars/avataruser.png'
       },
       to: [
         {
@@ -243,7 +243,7 @@ export const db: EmailType = {
       from: {
         email: 'hfrostdyke4@scientificamerican.com',
         name: 'Heath Frostdyke',
-        avatar: '/images/avatars/1.png'
+        avatar: '/images/avatars/avataruser.png'
       },
       to: [
         {
@@ -592,7 +592,7 @@ export const db: EmailType = {
           from: {
             email: 'hettiem@mail.com',
             name: 'Hettie Mcerlean',
-            avatar: '/images/avatars/1.png'
+            avatar: '/images/avatars/avataruser.png'
           },
           to: [
             {
@@ -700,7 +700,7 @@ export const db: EmailType = {
       from: {
         email: 'douldcottj@yellowpages.com',
         name: 'Dalila Ouldcott',
-        avatar: '/images/avatars/1.png'
+        avatar: '/images/avatars/avataruser.png'
       },
       to: [
         {
@@ -730,7 +730,7 @@ export const db: EmailType = {
           from: {
             email: 'johndoe@mail.com',
             name: 'John Doe',
-            avatar: '/images/avatars/1.png'
+            avatar: '/images/avatars/avataruser.png'
           },
           to: [
             {
@@ -861,7 +861,7 @@ export const db: EmailType = {
           from: {
             email: 'hettiem@mail.com',
             name: 'Hettie Mcerlean',
-            avatar: '/images/avatars/1.png'
+            avatar: '/images/avatars/avataruser.png'
           },
           to: [
             {
@@ -966,7 +966,7 @@ export const db: EmailType = {
           from: {
             email: 'johndoe@mail.com',
             name: 'John Doe',
-            avatar: '/images/avatars/1.png'
+            avatar: '/images/avatars/avataruser.png'
           },
           to: [
             {
@@ -992,7 +992,7 @@ export const db: EmailType = {
           from: {
             email: 'hettiem@mail.com',
             name: 'Hettie Mcerlean',
-            avatar: '/images/avatars/1.png'
+            avatar: '/images/avatars/avataruser.png'
           },
           to: [
             {
@@ -1022,7 +1022,7 @@ export const db: EmailType = {
       from: {
         email: 'peterwill@mail.com',
         name: 'Peter Williamson',
-        avatar: '/images/avatars/1.png'
+        avatar: '/images/avatars/avataruser.png'
       },
       to: [
         {

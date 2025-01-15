@@ -37,7 +37,7 @@ const data = [
     rating: 5,
     name: 'Eugenia Moore',
     position: 'Founder of Pinterest',
-    avatarSrc: '/images/avatars/1.png'
+    avatarSrc: '/images/avatars/avataruser.png'
   },
   {
     desc: 'Materio is awesome, and I particularly enjoy knowing that if I get stuck on something.',

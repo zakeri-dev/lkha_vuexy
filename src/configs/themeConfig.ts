@@ -55,8 +55,8 @@ export type Config = {
 
 const themeConfig: Config = {
   templateName: 'LKHA',
-  homePageUrl: '/dashboards/crm',
-  settingsCookieName: 'vuexy-mui-next-demo-1',
+  homePageUrl: '/dashboards',
+  settingsCookieName: 'sahem',
   mode: 'light', // 'system', 'light', 'dark'
   skin: 'default', // 'default', 'bordered'
   semiDark: false, // true, false

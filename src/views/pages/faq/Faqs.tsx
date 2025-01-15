@@ -74,7 +74,7 @@ const FAQ = ({ faqData, searchValue }: props) => {
             ))}
           </CustomTabList>
           <img
-            src='/images/illustrations/characters-with-objects/1.png'
+            src='/images/illustrations/characters-with-objects/avataruser.png'
             className='max-md:hidden is-[230px]'
             alt='john image'
           />

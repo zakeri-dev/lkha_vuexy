@@ -26,7 +26,7 @@ export const db: KanbanType = {
       attachments: 4,
       comments: 12,
       assigned: [
-        { src: '/images/avatars/1.png', name: 'John Doe' },
+        { src: '/images/avatars/avataruser.png', name: 'John Doe' },
         { src: '/images/avatars/2.png', name: 'Jane Smith' },
         { src: '/images/avatars/3.png', name: 'Robert Johnson' }
       ],
@@ -64,7 +64,7 @@ export const db: KanbanType = {
       comments: 18,
       assigned: [
         { src: '/images/avatars/6.png', name: 'David Smit' },
-        { src: '/images/avatars/1.png', name: 'John Doe' },
+        { src: '/images/avatars/avataruser.png', name: 'John Doe' },
         { src: '/images/avatars/5.png', name: 'Tom Smith' },
         { src: '/images/avatars/4.png', name: 'Emily Davis' }
       ],
@@ -80,7 +80,7 @@ export const db: KanbanType = {
       assigned: [
         { src: '/images/avatars/3.png', name: 'Robert Johnson' },
         { src: '/images/avatars/2.png', name: 'Jane Smith' },
-        { src: '/images/avatars/1.png', name: 'John Doe' }
+        { src: '/images/avatars/avataruser.png', name: 'John Doe' }
       ],
       dueDate: new Date(new Date().getFullYear(), 10, 10)
     },
@@ -90,7 +90,7 @@ export const db: KanbanType = {
       badgeText: ['Charts & Map'],
       attachments: 6,
       comments: 21,
-      assigned: [{ src: '/images/avatars/1.png', name: 'John Doe' }],
+      assigned: [{ src: '/images/avatars/avataruser.png', name: 'John Doe' }],
       dueDate: new Date(new Date().getFullYear(), 11, 5)
     }
   ]

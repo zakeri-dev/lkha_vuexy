@@ -20,7 +20,7 @@ const CardFacebook = () => {
         </Typography>
         <div className='flex align-center justify-between flex-wrap gap-x-4 gap-y-2'>
           <div className='flex items-center gap-2.5'>
-            <Avatar src='/images/avatars/1.png' />
+            <Avatar src='/images/avatars/avataruser.png' />
             <Typography className='text-white'>Eugene Clarke</Typography>
           </div>
           <div className='flex items-center gap-1.5'>

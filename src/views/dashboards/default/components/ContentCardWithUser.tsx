@@ -23,10 +23,7 @@ const ContentCardWithUser = ({ data }: any) => {
 
             // className='is-[78px] bs-[78px] border-[5px] border-backgroundPaper absolute start-[11px] block-start-[-39px]'
           />
-          <Typography
-            variant='h5'
-            className='bg-white p-2 px-6 rounded-md shadow-md -mr-3'
-          >
+          <Typography variant='h5' className='bg-white p-2 px-6 rounded-md shadow-md -mr-3'>
             محمد علوی
           </Typography>
           {/* <Button variant='contained'>Send Request</Button> */}
@@ -38,7 +35,7 @@ const ContentCardWithUser = ({ data }: any) => {
             18 mutual friends
           </Typography>
           <AvatarGroup max={4}>
-            <Avatar src='/images/avatars/1.png' />
+            <Avatar src='/images/avatars/avataruser.png' />
             <Avatar src='/images/avatars/5.png' />
             <Avatar src='/images/avatars/4.png' />
             <Avatar src='/images/avatars/6.png' />

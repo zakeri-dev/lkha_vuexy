@@ -107,7 +107,7 @@ export const db: DB = {
           leader: 'Eileen',
           avatar: '/images/logos/react-bg.png',
           avatarGroup: [
-            '/images/avatars/1.png',
+            '/images/avatars/avataruser.png',
             '/images/avatars/2.png',
             '/images/avatars/3.png',
             '/images/avatars/4.png'
@@ -132,7 +132,7 @@ export const db: DB = {
           avatarGroup: [
             '/images/avatars/7.png',
             '/images/avatars/8.png',
-            '/images/avatars/1.png',
+            '/images/avatars/avataruser.png',
             '/images/avatars/2.png'
           ],
           status: 62
@@ -157,7 +157,7 @@ export const db: DB = {
           title: 'Dojo React Project',
           subtitle: 'Python Project',
           avatar: '/images/logos/python-bg.png',
-          avatarGroup: ['/images/avatars/7.png', '/images/avatars/8.png', '/images/avatars/1.png'],
+          avatarGroup: ['/images/avatars/7.png', '/images/avatars/8.png', '/images/avatars/avataruser.png'],
           status: 36
         },
         {
@@ -184,7 +184,7 @@ export const db: DB = {
             '/images/avatars/6.png',
             '/images/avatars/7.png',
             '/images/avatars/8.png',
-            '/images/avatars/1.png'
+            '/images/avatars/avataruser.png'
           ],
           status: 88
         },
@@ -195,7 +195,7 @@ export const db: DB = {
           leader: 'Eileen',
           avatar: '/images/logos/react-bg.png',
           avatarGroup: [
-            '/images/avatars/1.png',
+            '/images/avatars/avataruser.png',
             '/images/avatars/2.png',
             '/images/avatars/3.png',
             '/images/avatars/4.png'
@@ -220,7 +220,7 @@ export const db: DB = {
           avatarGroup: [
             '/images/avatars/7.png',
             '/images/avatars/8.png',
-            '/images/avatars/1.png',
+            '/images/avatars/avataruser.png',
             '/images/avatars/2.png'
           ],
           status: 62
@@ -233,7 +233,7 @@ export const db: DB = {
         title: 'React Developers',
         avatar: '/images/logos/react-bg.png',
         avatarGroup: [
-          { avatar: '/images/avatars/1.png', name: 'Vinnie Mostowy' },
+          { avatar: '/images/avatars/avataruser.png', name: 'Vinnie Mostowy' },
           { avatar: '/images/avatars/2.png', name: 'Allen Rieske' },
           { avatar: '/images/avatars/3.png', name: 'Julee Rossignol' }
         ],
@@ -276,7 +276,7 @@ export const db: DB = {
         title: 'Creative Designers',
         avatar: '/images/logos/xd-bg.png',
         avatarGroup: [
-          { avatar: '/images/avatars/1.png', name: 'Jimmy Ressula' },
+          { avatar: '/images/avatars/avataruser.png', name: 'Jimmy Ressula' },
           { avatar: '/images/avatars/2.png', name: 'Kristi Lawker' },
           { avatar: '/images/avatars/3.png', name: 'Danny Paul' }
         ],
@@ -315,7 +315,7 @@ export const db: DB = {
         title: 'Digital Marketing',
         avatar: '/images/icons/social-bg.png',
         avatarGroup: [
-          { avatar: '/images/avatars/1.png', name: 'Kim Merchent' },
+          { avatar: '/images/avatars/avataruser.png', name: 'Kim Merchent' },
           { avatar: '/images/avatars/2.png', name: "Sam D'souza" },
           { avatar: '/images/avatars/3.png', name: 'Nurvi Karlos' }
         ],
@@ -354,7 +354,7 @@ export const db: DB = {
         title: 'Figma Resources',
         avatar: '/images/logos/figma-bg.png',
         avatarGroup: [
-          { avatar: '/images/avatars/1.png', name: 'Andrew Mostowy' },
+          { avatar: '/images/avatars/avataruser.png', name: 'Andrew Mostowy' },
           { avatar: '/images/avatars/2.png', name: 'Micky Ressula' },
           { avatar: '/images/avatars/3.png', name: 'Michel Pal' }
         ],
@@ -430,7 +430,7 @@ export const db: DB = {
         avatar: '/images/icons/social-bg.png',
         description: 'We are Consulting, Software Development and Web Development Services.',
         avatarGroup: [
-          { avatar: '/images/avatars/1.png', name: 'Vinnie Mostowy' },
+          { avatar: '/images/avatars/avataruser.png', name: 'Vinnie Mostowy' },
           { avatar: '/images/avatars/2.png', name: 'Allen Rieske' },
           { avatar: '/images/avatars/3.png', name: 'Julee Rossignol' }
         ]
@@ -478,7 +478,7 @@ export const db: DB = {
         avatarGroup: [
           { avatar: '/images/avatars/7.png', name: 'Jimmy Ressula' },
           { avatar: '/images/avatars/8.png', name: 'Kristi Lawker' },
-          { avatar: '/images/avatars/1.png', name: 'Danny Paul' }
+          { avatar: '/images/avatars/avataruser.png', name: 'Danny Paul' }
         ]
       },
       {
@@ -546,7 +546,7 @@ export const db: DB = {
         description: 'Premium logo designs created by top logo designers. Create the branding.',
         avatarGroup: [
           { avatar: '/images/avatars/8.png', name: 'Kim Karlos' },
-          { avatar: '/images/avatars/1.png', name: 'Katy Turner' },
+          { avatar: '/images/avatars/avataruser.png', name: 'Katy Turner' },
           { avatar: '/images/avatars/2.png', name: 'Peter Adward' }
         ]
       }
@@ -559,7 +559,7 @@ export const db: DB = {
         connections: '129',
         name: 'Mark Gilbert',
         designation: 'UI Designer',
-        avatar: '/images/avatars/1.png',
+        avatar: '/images/avatars/avataruser.png',
         chips: [
           {
             title: 'Figma',
@@ -681,7 +681,7 @@ export const db: DB = {
     location: 'Vatican City',
     joiningDate: 'April 2021',
     designation: 'UX Designer',
-    profileImg: '/images/avatars/1.png',
+    profileImg: '/images/avatars/avataruser.png',
     designationIcon: 'tabler-palette',
     coverImg: '/images/pages/profile-banner.png'
   }

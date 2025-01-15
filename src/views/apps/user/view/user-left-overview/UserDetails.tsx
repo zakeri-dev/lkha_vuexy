@@ -46,7 +46,7 @@ const UserDetails = () => {
           <div className='flex flex-col gap-6'>
             <div className='flex items-center justify-center flex-col gap-4'>
               <div className='flex flex-col items-center gap-4'>
-                <CustomAvatar alt='user-profile' src='/images/avatars/1.png' variant='rounded' size={120} />
+                <CustomAvatar alt='user-profile' src='/images/avatars/avataruser.png' variant='rounded' size={120} />
                 <Typography variant='h5'>{`${userData.firstName} ${userData.lastName}`}</Typography>
               </div>
               <Chip label='Author' color='secondary' size='small' variant='tonal' />

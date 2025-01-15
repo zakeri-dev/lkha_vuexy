@@ -69,7 +69,7 @@ const ActivityTimeline = () => {
               </div>
               <Typography className='mbe-2'>Project meeting with john @10:15am</Typography>
               <div className='flex items-center gap-2.5'>
-                <CustomAvatar src='/images/avatars/1.png' size={32} />
+                <CustomAvatar src='/images/avatars/avataruser.png' size={32} />
                 <div>
                   <Typography className='font-medium' variant='body2'>
                     Lester McCarthy (Client)
@@ -91,7 +91,7 @@ const ActivityTimeline = () => {
               </div>
               <Typography className='mbe-2'>6 team members in a project</Typography>
               <AvatarGroup total={6}>
-                <Avatar alt='Remy Sharp' src='/images/avatars/1.png' />
+                <Avatar alt='Remy Sharp' src='/images/avatars/avataruser.png' />
                 <Avatar alt='Travis Howard' src='/images/avatars/2.png' />
                 <Avatar alt='Cindy Baker' src='/images/avatars/3.png' />
               </AvatarGroup>

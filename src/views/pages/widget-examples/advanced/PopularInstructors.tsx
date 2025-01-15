@@ -18,7 +18,12 @@ type DataType = {
 
 // Vars
 const data: DataType[] = [
-  { name: 'Jordan Stevenson', profession: 'Business Intelligence', totalCourses: 33, avatar: '/images/avatars/1.png' },
+  {
+    name: 'Jordan Stevenson',
+    profession: 'Business Intelligence',
+    totalCourses: 33,
+    avatar: '/images/avatars/avataruser.png'
+  },
   { name: 'Bentlee Emblin', profession: 'Digital Marketing', totalCourses: 52, avatar: '/images/avatars/2.png' },
   { name: 'Benedetto Rossiter', profession: 'UI/UX Design', totalCourses: 12, avatar: '/images/avatars/3.png' },
   { name: 'Beverlie Krabbe', profession: 'Vue', totalCourses: 8, avatar: '/images/avatars/4.png' },

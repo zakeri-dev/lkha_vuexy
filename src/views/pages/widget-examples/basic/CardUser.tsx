@@ -29,7 +29,7 @@ const CardUser = () => {
             18 mutual friends
           </Typography>
           <AvatarGroup max={4}>
-            <Avatar src='/images/avatars/1.png' />
+            <Avatar src='/images/avatars/avataruser.png' />
             <Avatar src='/images/avatars/5.png' />
             <Avatar src='/images/avatars/4.png' />
             <Avatar src='/images/avatars/6.png' />

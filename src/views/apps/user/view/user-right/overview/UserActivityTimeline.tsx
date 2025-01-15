@@ -74,7 +74,7 @@ const UserActivityTimeLine = () => {
               </div>
               <Typography className='mbe-2'>Project meeting with john @10:15am</Typography>
               <div className='flex items-center gap-2.5'>
-                <CustomAvatar src='/images/avatars/1.png' size={32} />
+                <CustomAvatar src='/images/avatars/avataruser.png' size={32} />
                 <div className='flex flex-col flex-wrap'>
                   <Typography variant='body2' className='font-medium'>
                     Lester McCarthy (Client)
@@ -100,7 +100,7 @@ const UserActivityTimeLine = () => {
               </div>
               <Typography className='mbe-2'>6 team members in a project</Typography>
               <AvatarGroup total={6} className='pull-up'>
-                <Avatar alt='Travis Howard' src='/images/avatars/1.png' />
+                <Avatar alt='Travis Howard' src='/images/avatars/avataruser.png' />
                 <Avatar alt='Agnes Walker' src='/images/avatars/4.png' />
                 <Avatar alt='John Doe' src='/images/avatars/2.png' />
               </AvatarGroup>

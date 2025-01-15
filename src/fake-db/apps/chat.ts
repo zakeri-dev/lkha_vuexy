@@ -7,7 +7,7 @@ const dayBeforePreviousDay = new Date(new Date().getTime() - 24 * 60 * 60 * 1000
 export const db: ChatDataType = {
   profileUser: {
     id: 1,
-    avatar: '/images/avatars/1.png',
+    avatar: '/images/avatars/avataruser.png',
     fullName: 'John Doe',
     role: 'Admin',
     about:
