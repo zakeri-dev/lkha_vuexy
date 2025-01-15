@@ -1,4 +1,8 @@
 // MUI Imports
+import { Fragment } from 'react'
+
+import Image from 'next/image'
+
 import Grid from '@mui/material/Grid2'
 
 // Component Imports
@@ -21,11 +25,14 @@ import ActivityTimeline from '@views/dashboards/crm/ActivityTimeline'
 // Server Action Imports
 import { getServerMode } from '@core/utils/serverHelpers'
 import WebsiteAnalyticsSlider from '@/views/dashboards/default/WebsiteAnalyticsSlider'
-import LogisticsStatisticsCard from '@/views/dashboards/default/LogisticsStatisticsCard'
+import ShortCutsApp from '@/views/dashboards/default/ShortCutsApp'
 import { getLogisticsData, getStatisticsData } from '@/app/server/actions'
 import TopCourses from '@/views/dashboards/default/TopCourses'
 import HodhodWelcome from '@/views/dashboards/default/HodhodWelcome'
 import AiSoftwareList from '@/views/dashboards/default/AiSoftwareList'
+import Slider from '@/components/slider/slider'
+
+// filec: `${process.env.NEXT_PUBLIC_API__URL_images}/${data?.s3_image?.id}/${data?.s3_image?.filename_download}`
 
 const DashboardCRM = async () => {
   // Vars
@@ -51,9 +58,9 @@ const DashboardCRM = async () => {
         ></iframe>
       </Grid>
       <Grid size={{ xs: 12 }}>
-        <LogisticsStatisticsCard data={data?.statsHorizontalWithBorder} />
+        <ShortCutsApp />
       </Grid>
-      <Grid container spacing={6} className='bg-amber-300/70 p-2 rounded-md items-stretc'>
+      <Grid container spacing={4} className='bg-amber-300 p-6 rounded-md items-stretc'>
         <Grid size={{ xs: 12, sm: 6, md: 4 }}>
           <TopCourses />
         </Grid>

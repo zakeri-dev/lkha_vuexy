@@ -19,13 +19,13 @@ import ActivityTimeline from '@views/dashboards/crm/ActivityTimeline'
 // Server Action Imports
 import { getServerMode } from '@core/utils/serverHelpers'
 import WebsiteAnalyticsSlider from '@/views/dashboards/default/WebsiteAnalyticsSlider'
-import LogisticsStatisticsCard from '@/views/dashboards/default/LogisticsStatisticsCard'
+import ShortCutsApp from '@/views/dashboards/default/ShortCutsApp'
 import { getLogisticsData, getStatisticsData } from '@/app/server/actions'
 
 const DashboardCRM = async () => {
   // Vars
   const serverMode = await getServerMode()
-    const data = await getStatisticsData()
+  const data = await getStatisticsData()
 
   return (
     <Grid container spacing={6}>
@@ -46,7 +46,7 @@ const DashboardCRM = async () => {
         ></iframe>
       </Grid>
       <Grid size={{ xs: 12 }}>
-        <LogisticsStatisticsCard data={data?.statsHorizontalWithBorder} />
+        <ShortCutsApp data={data?.statsHorizontalWithBorder} />
       </Grid>
       <Grid size={{ xs: 12, sm: 6, md: 4 }}>
         <TopCourses />

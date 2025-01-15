@@ -17,10 +17,10 @@ type DataType = {
 }
 
 // Vars
-const data: DataType[] = [
-  { icon: 'tabler-calendar', title: '17 Nov 23', value: 'Date' },
-  { icon: 'tabler-clock', title: '32 Minutes', value: 'Duration' }
-]
+// const data: DataType[] = [
+//   { icon: 'tabler-calendar', title: '17 Nov 23', value: 'Date' },
+//   { icon: 'tabler-clock', title: '32 Minutes', value: 'Duration' }
+// ]
 
 const HodhodWelcome = () => {
   return (
