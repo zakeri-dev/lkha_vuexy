@@ -8,6 +8,8 @@ import Link from 'next/link'
 import { useParams, useRouter, useSearchParams } from 'next/navigation'
 
 // MUI Imports
+import Image from 'next/image'
+
 import useMediaQuery from '@mui/material/useMediaQuery'
 import { styled, useTheme } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
@@ -123,8 +125,8 @@ const Login = (props: Props) => {
   } = useForm<FormData>({
     resolver: valibotResolver(schema),
     defaultValues: {
-      email: 'admin@vuexy.com',
-      password: 'admin'
+      email: '',
+      password: ''
     }
   })
 
@@ -181,7 +183,10 @@ const Login = (props: Props) => {
 
   return (
     <div className='flex bs-full justify-center'>
-      <div
+      <div className='w-full grow'>
+        <Image src='/images/background.jpg' alt='alt' unoptimized width={100} height={100} className='w-full h-full object-cover' />
+      </div>
+      {/* <div
         className={classnames(
           'flex bs-full items-center justify-center flex-1 min-bs-[100dvh] relative p-6 max-md:hidden',
           {
@@ -189,22 +194,20 @@ const Login = (props: Props) => {
           }
         )}
       >
-        <LoginIllustration src={characterIllustration} alt='character-illustration' />
         {!hidden && <MaskImg alt='mask' src={authBackground} />}
-      </div>
-      <div className='flex justify-center items-center bs-full bg-backgroundPaper !min-is-full p-6 md:!min-is-[unset] md:p-12 md:is-[480px]'>
+      </div> */}
+      <div className='flex justify-center items-center bs-full bg-backgroundPaper !min-is-full p-6 md:!min-is-[unset] md:p-12 md:is-[580px]'>
         <div className='absolute block-start-5 sm:block-start-[33px] inline-start-6 sm:inline-start-[38px]'>
           <Logo />
         </div>
         <div className='flex flex-col gap-6 is-full sm:is-auto md:is-full sm:max-is-[400px] md:max-is-[unset] mbs-8 sm:mbs-11 md:mbs-0'>
           <div className='flex flex-col gap-1'>
-            <Typography variant='h4'>{`Welcome to ${themeConfig.templateName}! 👋🏻`}</Typography>
-            <Typography>Please sign-in to your account and start the adventure</Typography>
+            <Typography variant='h4'>{`به سامانه یکپارچه ساهم خوش آمدید! 👋🏻`}</Typography>
+            <Typography>لطفا جهت دسترسی به خدمات وارد شوید.</Typography>
           </div>
           <Alert icon={false} className='bg-[var(--mui-palette-primary-lightOpacity)]'>
             <Typography variant='body2' color='primary.main'>
-              Email: <span className='font-medium'>admin@vuexy.com</span> / Pass:{' '}
-              <span className='font-medium'>admin</span>
+             در صورتی که اطلاعات ورود خود را ندارید با پشتیبانی ارتباط بگیرید!
             </Typography>
           </Alert>
           <form
@@ -224,8 +227,8 @@ const Login = (props: Props) => {
                   autoFocus
                   fullWidth
                   type='email'
-                  label='Email'
-                  placeholder='Enter your email'
+                  label='نام کاربری'
+                  placeholder='نام کاربری خودرا وارد کنید'
                   onChange={e => {
                     field.onChange(e.target.value)
                     errorState !== null && setErrorState(null)
@@ -245,7 +248,7 @@ const Login = (props: Props) => {
                 <CustomTextField
                   {...field}
                   fullWidth
-                  label='Password'
+                  label='رمز عبور'
                   placeholder='············'
                   id='login-password'
                   type={isPasswordShown ? 'text' : 'password'}
@@ -273,26 +276,26 @@ const Login = (props: Props) => {
               )}
             />
             <div className='flex justify-between items-center gap-x-3 gap-y-1 flex-wrap'>
-              <FormControlLabel control={<Checkbox defaultChecked />} label='Remember me' />
-              <Typography
+              <FormControlLabel control={<Checkbox defaultChecked />} label='بخاطر سپردن' />
+              {/* <Typography
                 className='text-end'
                 color='primary.main'
                 component={Link}
                 href={getLocalizedUrl('/forgot-password', locale as Locale)}
               >
                 Forgot password?
-              </Typography>
+              </Typography> */}
             </div>
             <Button fullWidth variant='contained' type='submit'>
-              Login
+              ورود
             </Button>
-            <div className='flex justify-center items-center flex-wrap gap-2'>
+            {/* <div className='flex justify-center items-center flex-wrap gap-2'>
               <Typography>New on our platform?</Typography>
               <Typography component={Link} href={getLocalizedUrl('/register', locale as Locale)} color='primary.main'>
                 Create an account
               </Typography>
-            </div>
-            <Divider className='gap-2'>or</Divider>
+            </div> */}
+            <Divider className='gap-2'>یا</Divider>
             {/* <Button
               color='secondary'
               className='self-center text-textPrimary'

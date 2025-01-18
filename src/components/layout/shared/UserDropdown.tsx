@@ -129,19 +129,19 @@ const UserDropdown = () => {
                     </div>
                   </div>
                   <Divider className='mlb-1' />
-                  <MenuItem className='mli-2 gap-3' onClick={e => handleDropdownClose(e, '/pages/user-profile')}>
+                  <MenuItem className='mli-2 gap-3' onClick={e => handleDropdownClose(e, '/')}>
                     <i className='tabler-user' />
                     <Typography color='text.primary'>اطلاعات من</Typography>
                   </MenuItem>
-                  <MenuItem className='mli-2 gap-3' onClick={e => handleDropdownClose(e, '/pages/account-settings')}>
+                  <MenuItem className='mli-2 gap-3' onClick={e => handleDropdownClose(e, '/')}>
                     <i className='tabler-settings' />
                     <Typography color='text.primary'>تنظیمات</Typography>
                   </MenuItem>
-                  <MenuItem className='mli-2 gap-3' onClick={e => handleDropdownClose(e, '/pages/pricing')}>
+                  <MenuItem className='mli-2 gap-3' onClick={e => handleDropdownClose(e, '/')}>
                     <i className='tabler-wallet' />
                     <Typography color='text.primary'>کیف پول</Typography>
                   </MenuItem>
-                  <MenuItem className='mli-2 gap-3' onClick={e => handleDropdownClose(e, '/pages/faq')}>
+                  <MenuItem className='mli-2 gap-3' onClick={e => handleDropdownClose(e, '/')}>
                     <i className='tabler-help-hexagon' />
                     <Typography color='text.primary'>پشتیبانی</Typography>
                   </MenuItem>
