@@ -184,7 +184,14 @@ const Login = (props: Props) => {
   return (
     <div className='flex bs-full justify-center'>
       <div className='w-full grow'>
-        <Image src='/images/background.jpg' alt='alt' unoptimized width={100} height={100} className='w-full h-full object-cover' />
+        <Image
+          src='/images/background.jpg'
+          alt='alt'
+          unoptimized
+          width={100}
+          height={100}
+          className='w-full h-full object-cover'
+        />
       </div>
       {/* <div
         className={classnames(
@@ -207,7 +214,7 @@ const Login = (props: Props) => {
           </div>
           <Alert icon={false} className='bg-[var(--mui-palette-primary-lightOpacity)]'>
             <Typography variant='body2' color='primary.main'>
-             در صورتی که اطلاعات ورود خود را ندارید با پشتیبانی ارتباط بگیرید!
+              در صورتی که اطلاعات ورود خود را ندارید با پشتیبانی ارتباط بگیرید!
             </Typography>
           </Alert>
           <form
@@ -310,8 +317,7 @@ const Login = (props: Props) => {
               className='self-center text-textPrimary'
               startIcon={<i className='tabler-shield-lock text-[22px]' />}
               sx={{ '& .MuiButton-startIcon': { marginInlineEnd: 3 } }}
-
-              // onClick={() => popupCenter('/sso', 'Sample Sign In')}
+              onClick={() => popupCenter('/sso', 'Sample Sign In')}
 
               // startIcon={<img src='/images/logos/google.png' alt='Google' width={22} />}
               // onClick={() => signIn('keycloak')}

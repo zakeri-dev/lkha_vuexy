@@ -13,6 +13,7 @@ import AiSoftwareList from '@/views/dashboards/default/AiSoftwareList'
 import TabsCentered from '@/views/dashboards/default/components/TabsCentered'
 import Phone from '@/views/dashboards/default/components/Phone'
 import Baner from '@/views/dashboards/default/components/Baner'
+import { ChatPup } from '@/components/ai-chat/Popup'
 
 // filec: `${process.env.NEXT_PUBLIC_API__URL_images}/${data?.s3_image?.id}/${data?.s3_image?.filename_download}`
 
@@ -21,6 +22,7 @@ const DashboardCRM = async () => {
 
   return (
     <Grid container spacing={6}>
+      <ChatPup />
       <Grid size={{ xs: 12, lg: 8 }}>
         <ContentSlider />
       </Grid>

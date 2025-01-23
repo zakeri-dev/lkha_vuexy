@@ -27,6 +27,7 @@ import '@/app/globals.css'
 
 // Generated Icon CSS Imports
 import '@assets/iconify-icons/generated-icons.css'
+import { ChatPup } from '@/components/ai-chat/Popup'
 
 export const metadata = {
   title: 'ساهم | پنل یکپارچه',
@@ -48,6 +49,7 @@ const RootLayout = async (props: ChildrenType & { params: Promise<{ lang: Locale
       <html id='__next' lang={params.lang} dir={direction} suppressHydrationWarning>
         <body className='flex is-full min-bs-full flex-auto flex-col'>
           <InitColorSchemeScript attribute='data' defaultMode={systemMode} />
+
           {children}
         </body>
       </html>
