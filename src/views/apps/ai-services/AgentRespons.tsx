@@ -1,61 +1,41 @@
+'use client'
+
 // MUI Imports
 import Card from '@mui/material/Card'
+import Grid from '@mui/material/Grid2'
 import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
-import Divider from '@mui/material/Divider'
-import Typography from '@mui/material/Typography'
 
 // Components Imports
-import CustomAvatar from '@core/components/mui/Avatar'
-import OptionMenu from '@core/components/option-menu'
+// import OptionMenu from '@core/components/option-menu'
+import SendMsgForm from './SendMsgForm'
 
-type DataType = {
-  name: string
-  profession: string
-  totalCourses: number
-  avatar: string
-}
+const AgentRespons = ({ agentData }: any) => {
+  // Hooks
 
-// Vars
-const data: DataType[] = [
-  {
-    name: 'Jordan Stevenson',
-    profession: 'Business Intelligence',
-    totalCourses: 33,
-    avatar: '/images/avatars/avataruser.png'
-  },
-  { name: 'Bentlee Emblin', profession: 'Digital Marketing', totalCourses: 52, avatar: '/images/avatars/2.png' },
-  { name: 'Benedetto Rossiter', profession: 'UI/UX Design', totalCourses: 12, avatar: '/images/avatars/3.png' },
-  { name: 'Beverlie Krabbe', profession: 'Vue', totalCourses: 8, avatar: '/images/avatars/4.png' }
-]
-
-const AgentRespons = () => {
   return (
-    <Card className='bs-full'>
-      <CardHeader title='Popular Instructors' action={<OptionMenu options={['Refresh', 'Update', 'Share']} />} />
-      <Divider />
-      <div className='flex justify-between plb-4 pli-6'>
-        <Typography className='uppercase'>instructors</Typography>
-        <Typography className='uppercase'>courses</Typography>
-      </div>
-      <Divider />
-      <CardContent className='flex flex-col gap-4'>
-        {data.map((item, i) => (
-          <div key={i} className='flex items-center gap-4'>
-            <CustomAvatar size={34} src={item.avatar} />
-            <div className='flex justify-between items-center is-full gap-4'>
-              <div>
-                <Typography className='font-medium' color='text.primary'>
-                  {item.name}
-                </Typography>
-                <Typography variant='body2'>{item.profession}</Typography>
-              </div>
-              <Typography className='font-medium' color='text.primary'>
-                {item.totalCourses}
-              </Typography>
+    <Card className='light:bg-[#f3f2f5]'>
+      {/* <CardHeader
+      title='گفتگو'
+      action={<OptionMenu options={['Refresh', 'Update', 'Share']} />}
+      /> */}
+      <CardContent>
+        <div className='flex flex-col gap-6'>
+          <div className='flex flex-row-reverse'>
+            <div className='w-4/5 light:bg-white dark:border-2 border-white shadow-md p-3 rounded-tr-xl rounded-tl-xl rounded-br-xl'>
+              {agentData.message}
             </div>
           </div>
-        ))}
+          <div className='flex'>
+            <div className='w-4/5 bg-[#3366ff] text-white shadow-md p-3 rounded-tr-xl rounded-tl-xl rounded-bl-xl'>
+              {agentData.message}
+            </div>
+          </div>
+
+          <Grid size={{ xs: 12, sm: 12 }} alignSelf='center'>
+            <SendMsgForm />
+          </Grid>
+        </div>
       </CardContent>
     </Card>
   )

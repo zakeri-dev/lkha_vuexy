@@ -3,22 +3,17 @@
 // MUI Imports
 import Image from 'next/image'
 
-import Divider from '@mui/material/Divider'
 import Typography from '@mui/material/Typography'
-import useMediaQuery from '@mui/material/useMediaQuery'
-import { useTheme } from '@mui/material/styles'
 
 // Type Imports
 import { Card } from '@mui/material'
 
 const WelcomeAiAgentCard = ({ data }: any) => {
   // Hooks
-  const theme = useTheme()
-  const belowMdScreen = useMediaQuery(theme.breakpoints.down('md'))
 
   return (
-    <div className='flex max-md:flex-col md:items-center gap-6 plb-6'>
-      <div className='md:is-8/12'>
+    <Card className='grid grid-cols-12 max-md:flex-col md:items-center gap-6 plb-6 light:bg-white p-5 rounded-md shadow-md'>
+      <div className='md:col-span-10 flex flex-col w-full'>
         <div className='flex items-baseline gap-1 mbe-2'>
           <Typography variant='h5'>سلام👋🏻 من</Typography>
           <Typography variant='h4' className='font-bold'>
@@ -31,13 +26,12 @@ const WelcomeAiAgentCard = ({ data }: any) => {
           {/* <Typography>{data.message}</Typography> */}
         </div>
       </div>
-      <Divider orientation={belowMdScreen ? 'horizontal' : 'vertical'} flexItem />
-      <div className='aspect-square w-64'>
-        <Card color={data.color || 'primary'} className='aspect-square rounded-full'>
+      <div className='aspect-square col-span-2'>
+        <Card color={data.color || 'primary'} className='aspect-square bg-white/0'>
           <Image src={data.imageIcon} alt='alt' width={100} height={100} unoptimized className='w-full h-full ' />
         </Card>
       </div>
-    </div>
+    </Card>
   )
 }
 

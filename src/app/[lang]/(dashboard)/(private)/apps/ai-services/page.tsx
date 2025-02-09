@@ -5,8 +5,8 @@ import Grid from '@mui/material/Grid2'
 
 // Component Imports
 import WelcomeAiAgentCard from '@/views/apps/ai-services/WelcomeAiAgentCard'
-import AgentSetting from '@/views/apps/ai-services/AgentSetting'
 import AgentRespons from '@/views/apps/ai-services/AgentRespons'
+import AgentSetting from '@/views/apps/ai-services/AgentSetting'
 
 // Data Imports
 
@@ -28,10 +28,10 @@ const ChatApp = () => {
         <WelcomeAiAgentCard data={agent} />
       </Grid>
       <Grid size={{ xs: 12, sm: 6, md: 4 }}>
-        <AgentRespons />
+        <AgentSetting />
       </Grid>
       <Grid size={{ xs: 12, md: 8 }}>
-        <AgentSetting />
+        <AgentRespons agentData={agent} />
       </Grid>
     </Grid>
   )
