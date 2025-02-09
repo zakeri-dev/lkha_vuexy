@@ -1,14 +1,26 @@
 // Third-party Imports
-import { createSlice } from '@reduxjs/toolkit'
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 
 // Type Imports
 import axios from 'axios'
 
-import type { StatusType } from '@/types/apps/chatTypes'
-
 // Data Imports
 import { agentsInfo } from '../fake-db/agents'
+
+export const soroushHandler = createAsyncThunk('agents/soroushHandler', async (Msg: string) => {
+  console.log(Msg)
+
+  // const config = {
+  //   ...apiConfig,
+  //   url: `${process.env.NEXT_PUBLIC_URL}/auth/register`,
+  //   data
+  // }
+
+  // const res = await axios.request(config)
+
+  return { test: '' }
+})
 
 export const agentsSlice = createSlice({
   name: 'agents',
@@ -96,8 +108,24 @@ export const agentsSlice = createSlice({
       //   // Add the chat back to the beginning of the array
       //   state.chats.unshift(existingChat)
     }
+  },
+  extraReducers: builder => {
+    builder.addCase(soroushHandler.fulfilled, (state, action) => {
+      // state.number = action.payload.number
+      console.log(action.payload)
+    })
+
+    // builder.addCase(setJWT.fulfilled, (state, action) => {
+    //   // console.log(action.payload)
+    //   const oneWeekFromNow = new Date()
+
+    //   oneWeekFromNow.setDate(oneWeekFromNow.getDate() + 7)
+    //   cookie.set('jwt', action.payload?.data.refresh_token, { expires: oneWeekFromNow })
+    //   state.userInfo = action.payload?.data.user_info
+    //   localStorage.setItem('userInfo', JSON.stringify(action.payload?.data.user_info))
+    //   window.location.replace('/')
+    // })
   }
-  
 })
 
 export const { sendMsg } = agentsSlice.actions

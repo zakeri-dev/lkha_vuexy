@@ -5,13 +5,15 @@ import type { FormEvent, KeyboardEvent } from 'react'
 // MUI Imports
 import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
-import IconButton from '@mui/material/IconButton'
+
+// import IconButton from '@mui/material/IconButton'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { sendMsg } from '@/redux-store/slices/agents'
+import { sendMsg, soroushHandler } from '@/redux-store/slices/agents'
+import type { AppDispatch } from '@/redux-store'
 
 const SendMsgForm = ({}: any) => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch<AppDispatch>()
   const agents = useSelector((state: any) => state.agentsReducer.agents)
 
   // States
@@ -21,7 +23,7 @@ const SendMsgForm = ({}: any) => {
     event.preventDefault()
 
     if (msg.trim() !== '') {
-      dispatch(sendMsg({ msg }))
+      dispatch(soroushHandler(msg))
       setMsg('')
     }
   }
