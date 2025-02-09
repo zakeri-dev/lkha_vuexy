@@ -6,19 +6,27 @@ import type { FormEvent, KeyboardEvent } from 'react'
 import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
 import IconButton from '@mui/material/IconButton'
+import { useDispatch, useSelector } from 'react-redux'
+
+import { sendMsg } from '@/redux-store/slices/agents'
 
 const SendMsgForm = ({}: any) => {
+  const dispatch = useDispatch()
+  const agents = useSelector((state: any) => state.agentsReducer.agents)
+
   // States
   const [msg, setMsg] = useState('')
 
   const handleSendMsg = (event: FormEvent | KeyboardEvent, msg: string) => {
     event.preventDefault()
 
-    // if (msg.trim() !== '') {
-    //   dispatch(sendMsg({ msg }))
-    //   setMsg('')
-    // }
+    if (msg.trim() !== '') {
+      dispatch(sendMsg({ msg }))
+      setMsg('')
+    }
   }
+
+  console.log(agents)
 
   const handleInputEndAdornment = () => {
     return (

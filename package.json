@@ -60,6 +60,7 @@
     "fs-extra": "11.2.0",
     "input-otp": "1.4.1",
     "keen-slider": "6.8.6",
+    "lodash": "^4.17.21",
     "mapbox-gl": "3.9.0",
     "negotiator": "1.0.0",
     "next": "15.1.2",
@@ -80,6 +81,7 @@
     "recharts": "2.15.0",
     "server-only": "0.0.1",
     "swiper": "^11.2.1",
+    "swr": "^2.3.2",
     "valibot": "0.42.1"
   },
   "devDependencies": {

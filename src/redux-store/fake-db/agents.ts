@@ -1,79 +1,144 @@
 export const agentsInfo = [
   {
-    agent: 'soroush',
-    name: 'سروش',
+    agent: 'dana',
+    title: 'دانا',
+    stats: 'گفتگو با هوش مصنوعی',
     model: 'llama3.3:latest',
     wellcome: 'سلام! متن مورد نظر خودت رو ارسال کن تا برای شما ویرایش کنم.',
+    description: 'پیام‌آور هوشمند',
+    agentBio:
+      'در دنیای پرشتاب امروز، سامانه‌ای به نام “سروش” متولد شد که هدفش ساده کردن فهم و دسترسی به اطلاعات با استخراج پیام‌های اصلی از متون پیچیده و ارائه آن‌ها به صورت مختصر و روشن بود. این ایده توسط گروهی از پژوهشگران و مهندسان شکل گرفت که به دنبال ابزاری بودند که بتواند جوهره‌ی هر متن را در چند کلمه خلاصه کند و زیرعنوان‌هایی دقیق برای هر بخش تولید کند.',
+    selectedPersona: false,
+    avatar: '/images/agents/danaq.webp',
+    avatarq: '/images/agents/danaq.webp',
+    chats: [{ role: 'system', content: 'Speek in persian' }],
+    message:
+      'من اینجا هستم تا شما را در میان انبوهی از اطلاعات همراهی کنم. مأموریت من این است که عنوان، زیر عنوان و پیام‌های اصلی را برایتان آشکار کنم، تا بتوانید با آرامش و اطمینان، بر آنچه واقعاً مهم است تمرکز کنید. من یاد می‌گیرم، رشد می‌کنم و هر روز بهتر می‌شوم، زیرا شما به من اعتماد کرده‌اید.',
+    color: 'bg-black'
+  },
+  {
+    agent: 'soroush',
+    title: 'سروش',
+    model: 'llama3.3:latest',
+    stats: 'عنوان، زیرعنوان و موضوع محتوا',
+    wellcome: 'سلام! متن مورد نظر خودت رو ارسال کن تا برای شما ویرایش کنم.',
+    description: 'پیام‌آور هوشمند',
+    agentBio:
+      'در دنیای پرشتاب امروز، سامانه‌ای به نام “سروش” متولد شد که هدفش ساده کردن فهم و دسترسی به اطلاعات با استخراج پیام‌های اصلی از متون پیچیده و ارائه آن‌ها به صورت مختصر و روشن بود. این ایده توسط گروهی از پژوهشگران و مهندسان شکل گرفت که به دنبال ابزاری بودند که بتواند جوهره‌ی هر متن را در چند کلمه خلاصه کند و زیرعنوان‌هایی دقیق برای هر بخش تولید کند.',
+    selectedPersona: false,
     avatar: '/images/agents/soroushn.webp',
     avatarq: '/images/agents/soroushnq.webp',
-    messages: [
-      { role: 'system', content: 'Speek in persian' },
-      {
-        role: 'system',
-        content:
-          'You should not have any kind of conversation or dialogue with the user. If the conversation is initiated by the user, simply say one sentence: "لطفا مقاله خود را ارسال کنید!"'
-      },
-      {
-        role: 'system',
-        content:
-          'You are an AI agent tasked with the role of a helper in extracting headings from paragraphs of speeches, articles or official texts'
-      },
-      {
-        role: 'system',
-        content:
-          'If the user submits an article, analyze the article completely, and provide two items from the text accurately: 1-Number of paragraphs based on the literary editor: [Number of literary editor paragraphs]  2-Number of paragraphs based on the continuous meaning of the paragraphs: [Number of meaning paragraphs]'
-      },
-      {
-        role: 'system',
-        content: 'Make sure you don not have any conversations and just provide the required output'
-      }
-    ],
-    agentBio:
-      '<p>سلام!!!<br>امیدوارم حال شما خوب باشه!<br>من سروش هستم!<br>وظایفی در قبال متن و نیاز های شما دارم که به زودی خودم هم با خبر میشم.</p>',
-    selectedPersona: false,
-    updatePersona: () => {}
-
-    // agentConfig: <SoroushConfig/>
+    chats: [{ role: 'system', content: 'Speek in persian' }],
+    message:
+      'من اینجا هستم تا شما را در میان انبوهی از اطلاعات همراهی کنم. مأموریت من این است که عنوان، زیر عنوان و پیام‌های اصلی را برایتان آشکار کنم، تا بتوانید با آرامش و اطمینان، بر آنچه واقعاً مهم است تمرکز کنید. من یاد می‌گیرم، رشد می‌کنم و هر روز بهتر می‌شوم، زیرا شما به من اعتماد کرده‌اید.',
+    color: 'bg-black'
   },
   {
     agent: 'kheradYar',
-    name: 'خِرَد یار',
+    title: 'خِرَد یار',
+    stats: 'خلاصه سازی محتوا',
+    model: 'llama3.3:latest',
+    wellcome: 'سلام! متن مورد نظر خودت رو ارسال کن تا برای شما ویرایش کنم.',
+    description: 'پیام‌آور هوشمند',
+    agentBio:
+      'در دنیای پرشتاب امروز، سامانه‌ای به نام “سروش” متولد شد که هدفش ساده کردن فهم و دسترسی به اطلاعات با استخراج پیام‌های اصلی از متون پیچیده و ارائه آن‌ها به صورت مختصر و روشن بود. این ایده توسط گروهی از پژوهشگران و مهندسان شکل گرفت که به دنبال ابزاری بودند که بتواند جوهره‌ی هر متن را در چند کلمه خلاصه کند و زیرعنوان‌هایی دقیق برای هر بخش تولید کند.',
+    selectedPersona: false,
     avatar: '/images/agents/noktehyar.webp',
     avatarq: '/images/agents/noktehyarq.webp',
-    model: 'nemotron:latest',
-    wellcome: 'سلام! متن مورد نظر خودت رو ارسال کن تا برات ویرایش کنم.',
-    messages: [
-      {
-        role: 'system',
-        content: `
-        befor any thing tell: سلام من خرد یارم.
-        `
-      }
-    ],
-    agentBio: '',
-    selectedPersona: false,
-    updatePersona: () => {}
-
-    // agentConfig: <SoroushConfig/>
+    chats: [{ role: 'system', content: 'Speek in persian' }],
+    message:
+      'من اینجا هستم تا شما را در میان انبوهی از اطلاعات همراهی کنم. مأموریت من این است که عنوان، زیر عنوان و پیام‌های اصلی را برایتان آشکار کنم، تا بتوانید با آرامش و اطمینان، بر آنچه واقعاً مهم است تمرکز کنید. من یاد می‌گیرم، رشد می‌کنم و هر روز بهتر می‌شوم، زیرا شما به من اعتماد کرده‌اید.',
+    color: 'primary'
   },
   {
     agent: 'vajeBan',
-    name: 'واژه بان',
+    title: 'واژه بان',
+    stats: 'استخراج کلمات معنایی و مهم محتوا',
+    model: 'llama3.3:latest',
+    wellcome: 'سلام! متن مورد نظر خودت رو ارسال کن تا برای شما ویرایش کنم.',
+    description: 'پیام‌آور هوشمند',
+    agentBio:
+      'در دنیای پرشتاب امروز، سامانه‌ای به نام “سروش” متولد شد که هدفش ساده کردن فهم و دسترسی به اطلاعات با استخراج پیام‌های اصلی از متون پیچیده و ارائه آن‌ها به صورت مختصر و روشن بود. این ایده توسط گروهی از پژوهشگران و مهندسان شکل گرفت که به دنبال ابزاری بودند که بتواند جوهره‌ی هر متن را در چند کلمه خلاصه کند و زیرعنوان‌هایی دقیق برای هر بخش تولید کند.',
+    selectedPersona: false,
     avatar: '/images/agents/vajeban.webp',
     avatarq: '/images/agents/vajebanq.webp',
-    model: 'nemotron:latest',
-    wellcome: 'سلام! متن مورد نظر خودت رو ارسال کن تا برات ویرایش کنم.',
-    messages: [{ role: 'system', content: 'Speak in English' }],
-    agentBio: '',
-    selectedPersona: false,
-    updatePersona: () => {}
-
-    // agentConfig: <SoroushConfig/>
+    chats: [{ role: 'system', content: 'Speek in persian' }],
+    message:
+      'من اینجا هستم تا شما را در میان انبوهی از اطلاعات همراهی کنم. مأموریت من این است که عنوان، زیر عنوان و پیام‌های اصلی را برایتان آشکار کنم، تا بتوانید با آرامش و اطمینان، بر آنچه واقعاً مهم است تمرکز کنید. من یاد می‌گیرم، رشد می‌کنم و هر روز بهتر می‌شوم، زیرا شما به من اعتماد کرده‌اید.',
+    color: 'info'
   },
+  {
+    agent: 'zabanYar',
+    title: 'زبان یار',
+    stats: 'ترجمه و آموزش زبان',
+    model: 'llama3.3:latest',
+    wellcome: 'سلام! متن مورد نظر خودت رو ارسال کن تا برای شما ویرایش کنم.',
+    description: 'پیام‌آور هوشمند',
+    agentBio:
+      'در دنیای پرشتاب امروز، سامانه‌ای به نام “سروش” متولد شد که هدفش ساده کردن فهم و دسترسی به اطلاعات با استخراج پیام‌های اصلی از متون پیچیده و ارائه آن‌ها به صورت مختصر و روشن بود. این ایده توسط گروهی از پژوهشگران و مهندسان شکل گرفت که به دنبال ابزاری بودند که بتواند جوهره‌ی هر متن را در چند کلمه خلاصه کند و زیرعنوان‌هایی دقیق برای هر بخش تولید کند.',
+    selectedPersona: false,
+    avatar: '/images/agents/translate.webp',
+    avatarq: '/images/agents/translateq.webp',
+    chats: [{ role: 'system', content: 'Speek in persian' }],
+    message:
+      'من اینجا هستم تا شما را در میان انبوهی از اطلاعات همراهی کنم. مأموریت من این است که عنوان، زیر عنوان و پیام‌های اصلی را برایتان آشکار کنم، تا بتوانید با آرامش و اطمینان، بر آنچه واقعاً مهم است تمرکز کنید. من یاد می‌گیرم، رشد می‌کنم و هر روز بهتر می‌شوم، زیرا شما به من اعتماد کرده‌اید.',
+    color: 'error'
+  },
+  {
+    agent: 'nokteYar',
+    title: 'نکته یار',
+    stats: 'فیشبرداری',
+    model: 'llama3.3:latest',
+    wellcome: 'سلام! متن مورد نظر خودت رو ارسال کن تا برای شما ویرایش کنم.',
+    description: 'پیام‌آور هوشمند',
+    agentBio:
+      'در دنیای پرشتاب امروز، سامانه‌ای به نام “سروش” متولد شد که هدفش ساده کردن فهم و دسترسی به اطلاعات با استخراج پیام‌های اصلی از متون پیچیده و ارائه آن‌ها به صورت مختصر و روشن بود. این ایده توسط گروهی از پژوهشگران و مهندسان شکل گرفت که به دنبال ابزاری بودند که بتواند جوهره‌ی هر متن را در چند کلمه خلاصه کند و زیرعنوان‌هایی دقیق برای هر بخش تولید کند.',
+    selectedPersona: false,
+    avatar: '/images/agents/nokteh.webp',
+    avatarq: '/images/agents/noktehq.webp',
+    chats: [{ role: 'system', content: 'Speek in persian' }],
+    message:
+      'من اینجا هستم تا شما را در میان انبوهی از اطلاعات همراهی کنم. مأموریت من این است که عنوان، زیر عنوان و پیام‌های اصلی را برایتان آشکار کنم، تا بتوانید با آرامش و اطمینان، بر آنچه واقعاً مهم است تمرکز کنید. من یاد می‌گیرم، رشد می‌کنم و هر روز بهتر می‌شوم، زیرا شما به من اعتماد کرده‌اید.',
+    color: 'info'
+  },
+  {
+    agent: 'pishNegar',
+    title: 'پیش نگار',
+    stats: 'تصحیح نگارش و پیشنهاداملا',
+    model: 'llama3.3:latest',
+    wellcome: 'سلام! متن مورد نظر خودت رو ارسال کن تا برای شما ویرایش کنم.',
+    description: 'پیام‌آور هوشمند',
+    agentBio:
+      'در دنیای پرشتاب امروز، سامانه‌ای به نام “سروش” متولد شد که هدفش ساده کردن فهم و دسترسی به اطلاعات با استخراج پیام‌های اصلی از متون پیچیده و ارائه آن‌ها به صورت مختصر و روشن بود. این ایده توسط گروهی از پژوهشگران و مهندسان شکل گرفت که به دنبال ابزاری بودند که بتواند جوهره‌ی هر متن را در چند کلمه خلاصه کند و زیرعنوان‌هایی دقیق برای هر بخش تولید کند.',
+    selectedPersona: false,
+    avatar: '/images/agents/pishnegar.webp',
+    avatarq: '/images/agents/pishnegarq.webp',
+    chats: [{ role: 'system', content: 'Speek in persian' }],
+    message:
+      'من اینجا هستم تا شما را در میان انبوهی از اطلاعات همراهی کنم. مأموریت من این است که عنوان، زیر عنوان و پیام‌های اصلی را برایتان آشکار کنم، تا بتوانید با آرامش و اطمینان، بر آنچه واقعاً مهم است تمرکز کنید. من یاد می‌گیرم، رشد می‌کنم و هر روز بهتر می‌شوم، زیرا شما به من اعتماد کرده‌اید.',
+    color: 'warning'
+  },
+  {
+    agent: 'porsana',
+    title: 'پُرسانا',
+    stats: 'تهیه سوال از محتوا',
+    model: 'llama3.3:latest',
+    wellcome: 'سلام! متن مورد نظر خودت رو ارسال کن تا برای شما ویرایش کنم.',
+    description: 'پیام‌آور هوشمند',
+    agentBio:
+      'در دنیای پرشتاب امروز، سامانه‌ای به نام “سروش” متولد شد که هدفش ساده کردن فهم و دسترسی به اطلاعات با استخراج پیام‌های اصلی از متون پیچیده و ارائه آن‌ها به صورت مختصر و روشن بود. این ایده توسط گروهی از پژوهشگران و مهندسان شکل گرفت که به دنبال ابزاری بودند که بتواند جوهره‌ی هر متن را در چند کلمه خلاصه کند و زیرعنوان‌هایی دقیق برای هر بخش تولید کند.',
+    selectedPersona: false,
+    avatar: '/images/agents/porsanam.webp',
+    avatarq: '/images/agents/porsanamq.webp',
+    chats: [{ role: 'system', content: 'Speek in persian' }],
+    message:
+      'من اینجا هستم تا شما را در میان انبوهی از اطلاعات همراهی کنم. مأموریت من این است که عنوان، زیر عنوان و پیام‌های اصلی را برایتان آشکار کنم، تا بتوانید با آرامش و اطمینان، بر آنچه واقعاً مهم است تمرکز کنید. من یاد می‌گیرم، رشد می‌کنم و هر روز بهتر می‌شوم، زیرا شما به من اعتماد کرده‌اید.',
+    color: 'bg-black'
+  }
 
   // {
   //   agent: 'rahyab',
-  //   name: 'رهیاب',
+  //   title: 'رهیاب',
   //   avatar: '',
   //   model: 'nemotron:latest',
   //   wellcome: 'سلام! متن مورد نظر خودت رو ارسال کن تا برات ویرایش کنم.',
@@ -85,7 +150,7 @@ export const agentsInfo = [
   // },
   // {
   //   agent: 'nevisa',
-  //   name: 'نویسا',
+  //   title: 'نویسا',
   //   avatar: '',
   //   model: 'nemotron:latest',
   //   wellcome: 'سلام! متن مورد نظر خودت رو ارسال کن تا برات ویرایش کنم.',
@@ -97,7 +162,7 @@ export const agentsInfo = [
   // },
   // {
   //   agent: 'farhangYar',
-  //   name: 'فرهنگ یار',
+  //   title: 'فرهنگ یار',
   //   avatar: '',
   //   model: 'nemotron:latest',
   //   wellcome: 'سلام! متن مورد نظر خودت رو ارسال کن تا برات ویرایش کنم.',
@@ -109,7 +174,7 @@ export const agentsInfo = [
   // },
   // {
   //   agent: 'bineshYar',
-  //   name: 'بینش یار',
+  //   title: 'بینش یار',
   //   model: 'nemotron:latest',
   //   wellcome: 'سلام! متن مورد نظر خودت رو ارسال کن تا برات ویرایش کنم.',
   //   messages: [{ role: 'system', content: 'Speak in Persian' }],
@@ -118,66 +183,9 @@ export const agentsInfo = [
   //   updatePersona: () => {}
   //   // agentConfig: <SoroushConfig/>
   // },
-  {
-    agent: 'zabanYar',
-    name: 'زبان یار',
-    avatar: '/images/agents/translate.webp',
-    avatarq: '/images/agents/translateq.webp',
-    model: 'nemotron:latest',
-    wellcome: 'سلام! متن مورد نظر خودت رو ارسال کن تا برات ویرایش کنم.',
-    messages: [{ role: 'system', content: 'Speak in Persian' }],
-    agentBio: '',
-    selectedPersona: false,
-    updatePersona: () => {}
-
-    // agentConfig: <SoroushConfig/>
-  },
-  {
-    agent: 'nokteYar',
-    name: 'نکته یار',
-    avatar: '/images/agents/nokteh.webp',
-    avatarq: '/images/agents/noktehq.webp',
-    model: 'nemotron:latest',
-    wellcome: 'سلام! متن مورد نظر خودت رو ارسال کن تا برات ویرایش کنم.',
-    messages: [{ role: 'system', content: 'Speak in Persian' }],
-    agentBio: '',
-    selectedPersona: false,
-    updatePersona: () => {}
-
-    // agentConfig: <SoroushConfig/>
-  },
-  {
-    agent: 'pishNegar',
-    name: 'پیش نگار',
-    avatar: '/images/agents/pishnegar.webp',
-    avatarq: '/images/agents/pishnegarq.webp',
-    model: 'nemotron:latest',
-    wellcome: 'سلام! متن مورد نظر خودت رو ارسال کن تا برات ویرایش کنم.',
-    messages: [{ role: 'system', content: 'Speak in Persian' }],
-    agentBio: '',
-    selectedPersona: false,
-    updatePersona: () => {}
-
-    // agentConfig: <SoroushConfig/>
-  },
-  {
-    agent: 'porsana',
-    name: 'پُرسانا',
-    avatar: '/images/agents/porsana2.webp',
-    avatarq: '/images/agents/porsana2q.webp',
-    model: 'nemotron:latest',
-    wellcome: 'سلام! متن مورد نظر خودت رو ارسال کن تا برات ویرایش کنم.',
-    messages: [{ role: 'system', content: 'Speak in Persian' }],
-    agentBio: '',
-    selectedPersona: false,
-    updatePersona: () => {}
-
-    // agentConfig: <SoroushConfig/>
-  }
-
   // {
   //   agent: 'parsa',
-  //   name: 'پارسا',
+  //   title: 'پارسا',
   //   avatar: '',
   //   model: 'nemotron:latest',
   //   wellcome: 'سلام! متن مورد نظر خودت رو ارسال کن تا برات ویرایش کنم.',
