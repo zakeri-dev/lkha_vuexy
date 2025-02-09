@@ -50,7 +50,7 @@ const ChatApp = () => {
 
   useEffect(() => {
     setSelectedAgent(find(agents, { agent: searchParams.get('agent') }) || agent)
-  }, [agents, searchParams])
+  }, [agents])
 
   // const dispatch = useDispatch()
   // console.log(find(agents, { agent: searchParams.get('agent') }))
@@ -65,10 +65,10 @@ const ChatApp = () => {
       <Grid size={{ xs: 12 }}>
         <WelcomeAiAgentCard data={selectedAgent} />
       </Grid>
-      <Grid size={{ xs: 12, sm: 6, md: 4 }}>
+      {/* <Grid size={{ xs: 12, sm: 6, md: 4 }}>
         <AgentSetting />
-      </Grid>
-      <Grid size={{ xs: 12, md: 8 }}>
+      </Grid> */}
+      <Grid size={{ xs: 12, md: 12 }}>
         <AgentRespons agentData={selectedAgent} />
       </Grid>
     </Grid>

@@ -14,7 +14,7 @@ import type { AppDispatch } from '@/redux-store'
 
 const SendMsgForm = ({}: any) => {
   const dispatch = useDispatch<AppDispatch>()
-  const agents = useSelector((state: any) => state.agentsReducer.agents)
+  const agents = useSelector((state: any) => state.agentsReducer)
 
   // States
   const [msg, setMsg] = useState('')
@@ -28,7 +28,7 @@ const SendMsgForm = ({}: any) => {
     }
   }
 
-  console.log(agents)
+  // console.log(agents.selected.loading)
 
   const handleInputEndAdornment = () => {
     return (
@@ -44,8 +44,21 @@ const SendMsgForm = ({}: any) => {
           {/* <CustomIconButton variant='contained' color='primary' type='submit'>
             <i className='tabler-send' />
           </CustomIconButton> */}
-          <Button variant='contained' color='primary' type='submit' endIcon={<i className='tabler-send' />}>
-            ارسال
+          <Button
+            variant='contained'
+            color='primary'
+            type='submit'
+            endIcon={
+              !agents.selected.loading ? (
+                <i className='tabler-send' />
+              ) : (
+                <i className='tabler-loader-quarter animate-spin' />
+              )
+            }
+            className='whitespace-nowrap'
+            disabled={agents.selected.loading}
+          >
+            {!agents.selected.loading ? 'ارسال' : 'صبر کنید'}
           </Button>
         </>
       </div>
@@ -58,7 +71,7 @@ const SendMsgForm = ({}: any) => {
         fullWidth
         multiline
         maxRows={10}
-        placeholder='متن خود را ابنجا بنویسید ...'
+        placeholder='متن خود را اینجا بنویسید ...'
         value={msg}
         className=''
         onChange={e => setMsg(e.target.value)}

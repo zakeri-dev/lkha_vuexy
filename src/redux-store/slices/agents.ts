@@ -8,18 +8,26 @@ import axios from 'axios'
 // Data Imports
 import { agentsInfo } from '../fake-db/agents'
 
-export const soroushHandler = createAsyncThunk('agents/soroushHandler', async (Msg: string) => {
-  console.log(Msg)
+export const soroushHandler = createAsyncThunk('agents/soroushHandler', async (Msg: string, { getState, dispatch }) => {
+  // const state = getState() as { agentsReducer: { selected: { msg: string } } }
 
-  // const config = {
-  //   ...apiConfig,
-  //   url: `${process.env.NEXT_PUBLIC_URL}/auth/register`,
-  //   data
-  // }
+  dispatch(sendMsg({ msg: Msg }))
 
-  // const res = await axios.request(config)
+  const config = {
+    method: 'post',
+    maxBodyLength: Infinity,
+    url: 'https://flow-getway.app.khi.local/webhook/e8b2b74b-29c0-4547-b259-1f6519466509',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    data: { chatInput: Msg }
+  }
 
-  return { test: '' }
+  const res = await axios.request(config)
+
+  return {
+    res: res.data[0]
+  }
 })
 
 export const agentsSlice = createSlice({
@@ -27,8 +35,9 @@ export const agentsSlice = createSlice({
   initialState: {
     agents: agentsInfo,
     selected: {
+      loading: false,
       msg: '',
-      result: ''
+      result: null
     }
   },
   reducers: {
@@ -64,32 +73,8 @@ export const agentsSlice = createSlice({
     sendMsg: (state, action: PayloadAction<{ msg: string }>) => {
       const { msg } = action.payload
 
+      // console.log(msg)
       state.selected.msg = msg
-      console.log(msg)
-
-      const FormData = require('form-data')
-      const data = new FormData()
-
-      data.append('chatInput', msg)
-
-      const config = {
-        method: 'post',
-        maxBodyLength: Infinity,
-        url: 'https://flow-getway.app.khi.local/webhook-test/e8b2b74b-29c0-4547-b259-1f6519466509',
-
-        data: data
-      }
-
-      axios
-        .request(config)
-        .then(response => {
-          console.log(response.data)
-          state.selected.result = response.data[0]
-          state.selected.msg = ''
-        })
-        .catch(error => {
-          console.log(error)
-        })
 
       // const existingChat = state.chats.find(chat => chat.userId === state.activeUser?.id)
       // if (existingChat) {
@@ -111,7 +96,16 @@ export const agentsSlice = createSlice({
   },
   extraReducers: builder => {
     builder.addCase(soroushHandler.fulfilled, (state, action) => {
-      // state.number = action.payload.number
+      state.selected.loading = false
+      state.selected.result = action.payload.res
+
+      // console.log(action.payload.res)
+    })
+    builder.addCase(soroushHandler.pending, state => {
+      state.selected.loading = true
+    })
+    builder.addCase(soroushHandler.rejected, (state, action) => {
+      state.selected.loading = false
       console.log(action.payload)
     })
 
