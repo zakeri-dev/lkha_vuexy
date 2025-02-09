@@ -48,9 +48,9 @@ const defaultSlide = [
   }
 ]
 
-const ShortCutsApp = () => {
+const ShortCutsAi = () => {
   return (
-    <div className='app-shortcuts'>
+    <div className='ai-shortcuts'>
       <Slider
         slidesPerView={7}
         breakpoints={{
@@ -87,7 +87,7 @@ const ShortCutsApp = () => {
   )
 }
 
-export default ShortCutsApp
+export default ShortCutsAi
 
 {
   /* <Image

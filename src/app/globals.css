@@ -140,3 +140,7 @@ span.swiper-pagination-bullet {
   justify-content: flex-end;
   padding: 5px;
 }
+.app-shortcuts .swiper-wrapper, .ai-shortcuts .swiper-wrapper{
+  justify-content: center !important;
+  align-items: center !important;
+}

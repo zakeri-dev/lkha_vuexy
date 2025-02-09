@@ -3,7 +3,6 @@
 import Grid from '@mui/material/Grid2'
 
 // Server Action Imports
-import classNames from 'classnames'
 
 import ContentSlider from '@/views/dashboards/default/ContentSlider'
 import ShortCutsApp from '@/views/dashboards/default/ShortCutsApp'
@@ -14,6 +13,7 @@ import TabsCentered from '@/views/dashboards/default/components/TabsCentered'
 import Phone from '@/views/dashboards/default/components/Phone'
 import Baner from '@/views/dashboards/default/components/Baner'
 import { ChatPup } from '@/components/ai-chat/Popup'
+import ShortcutsTab from '@/views/dashboards/default/components/ShortcutsTab'
 
 // filec: `${process.env.NEXT_PUBLIC_API__URL_images}/${data?.s3_image?.id}/${data?.s3_image?.filename_download}`
 
@@ -22,7 +22,7 @@ const DashboardCRM = async () => {
 
   return (
     <Grid container spacing={6}>
-      <ChatPup />
+      {/* <ChatPup /> */}
       <Grid size={{ xs: 12, lg: 8 }}>
         <ContentSlider />
       </Grid>
@@ -40,7 +40,8 @@ const DashboardCRM = async () => {
         ></iframe>
       </Grid>
       <Grid size={{ xs: 12 }}>
-        <ShortCutsApp />
+        <ShortcutsTab />
+        {/* <ShortCutsApp /> */}
       </Grid>
       {/* <Grid size={{ xs: 12 }} className='pbs-12'>
         <Typography variant='h3'>Navigation Cards</Typography>

@@ -43,31 +43,29 @@ const AppsShortcut = (props: CardStatsHorizontalWithBorderProps) => {
   const { title, stats, imageIcon, avatarIcon, color } = props
 
   return (
-    <Card color={color || 'primary'} className=''>
-      <CardContent className='flex max-md:flex-col gap-1 p-3 items-center'>
-        <CustomAvatar color={color} skin='light' variant='rounded' className='w-full md:w-1/2 h-full'>
-          {/* <i className={classnames(avatarIcon, 'text-[42px]')} /> */}
-          <Image src={imageIcon} alt='alt' width={100} height={100} unoptimized className='p-3' />
-        </CustomAvatar>
-        <Typography variant='h4' className='w-full text-center'>
-          {title}
-        </Typography>
+    <>
+      <Card color={color || 'primary'} className='aspect-square rounded-full'>
+        {/* <CustomAvatar color={color} skin='light' variant='rounded' className='w-full md:w-1/2 h-full'> */}
+        {/* <i className={classnames(avatarIcon, 'text-[42px]')} /> */}
+        <Image src={imageIcon} alt='alt' width={100} height={100} unoptimized className='w-full h-full p-10' />
+        {/* </CustomAvatar> */}
 
         {/* <div className='flex flex-col gap-1'>
           <Typography>{title}</Typography>
           <div className='flex items-center gap-2'>
-            <Typography
-              color='text.primary'
-              className='font-medium'
-            >{`${trendNumber > 0 ? '+' : ''}${trendNumber}%`}</Typography>
-            <Typography variant='body2' color='text.disabled'>
-              than last week
-            </Typography>
+          <Typography
+          color='text.primary'
+          className='font-medium'
+          >{`${trendNumber > 0 ? '+' : ''}${trendNumber}%`}</Typography>
+          <Typography variant='body2' color='text.disabled'>
+          than last week
+          </Typography>
           </div>
-        </div> */}
-      </CardContent>
-      {/* <Typography className='text-center pb-1'>{stats}</Typography> */}
-    </Card>
+          </div> */}
+        {/* <Typography className='text-center pb-1'>{stats}</Typography> */}
+      </Card>
+      <Typography className='mt-4 text-lg font-bold w-full text-center'>{title}</Typography>
+    </>
   )
 }
 

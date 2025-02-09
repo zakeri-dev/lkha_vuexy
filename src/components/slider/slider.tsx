@@ -10,7 +10,7 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 
-const Slider = ({ children, slidesPerView, spaceBetween, className }: any) => {
+const Slider = ({ children, slidesPerView, breakpoints, spaceBetween, className }: any) => {
   // console.log(children)
   // const navigationNextRef = useRef(null)
   // const navigationPrevRef = useRef(null)
@@ -18,9 +18,10 @@ const Slider = ({ children, slidesPerView, spaceBetween, className }: any) => {
 
   return (
     <Swiper
-      className='mySwiper relative '
+      className='mySwiper relative'
       dir='rtl'
-      slidesPerView={slidesPerView || 'auto'}
+      slidesPerView={slidesPerView || 1}
+      breakpoints={breakpoints}
       loop={true}
       spaceBetween={spaceBetween || 10}
       onBeforeInit={swiper => {
@@ -48,7 +49,7 @@ const Slider = ({ children, slidesPerView, spaceBetween, className }: any) => {
           )
         })
       ) : (
-        <SwiperSlide>{children.props.children}</SwiperSlide>
+        <SwiperSlide className=''>{children.props.children}</SwiperSlide>
       )}
       {/* <div className='absolute bottom-0 right-0 z-10 w-[300px] bg-white pb-64 skew-y-[144deg] origin-[110%_100%] '></div> */}
       <div className='absolute left-0 top-[40%] w-full flex gap-3 justify-between'>
