@@ -7,43 +7,55 @@ import Image from 'next/image'
 import classNames from 'classnames'
 
 import Slider from '@/components/slider/slider'
-import AppsShortcut from '@/components/card-statistics/AppsShortcut'
+import AiShortcut from '@/components/card-statistics/AiShortcut'
 
 const defaultSlide = [
   {
-    title: 'چارگون',
-    stats: 'اتوماسیون اداری',
-    imageIcon: '/images/icons/chargoon.png',
+    title: 'دانا',
+    stats: 'گفتگو با هوش مصنوعی',
+    imageIcon: '/images/agents/danaq.webp',
     color: 'primary'
   },
   {
-    title: 'میزیتو',
+    title: 'زبان یار',
+    stats: 'ترجمه و آموزش زبان',
+    imageIcon: '/images/agents/translateq.webp',
+    color: 'bg-black'
+  },
+  {
+    title: 'نکته یار',
     stats: 'مدیریت پروژه',
-    imageIcon: '/images/icons/mizito.png',
+    imageIcon: '/images/agents/noktehq.webp',
     color: 'error'
   },
   {
-    title: 'فکور',
-    stats: 'آرشیو و مدیریت اسناد',
-    imageIcon: '/images/icons/fakoor2.png',
+    title: 'خِرَد یار',
+    stats: 'خلاصه سازی محتوا',
+    imageIcon: '/images/agents/noktehyarq.webp',
     color: 'info'
   },
   {
-    title: 'رستوران',
-    stats: 'سامانه رزرو غذا',
-    imageIcon: '/images/icons/food.png',
+    title: 'پیش نگار',
+    stats: 'تصحیح نگارش و پیشنهاداملا',
+    imageIcon: '/images/agents/pishnegarq.webp',
     color: 'warning'
   },
   {
-    title: 'خدمات',
-    stats: 'سامانه رزرو غذا',
-    imageIcon: '/images/icons/MEET.png',
-    color: '#fff'
+    title: 'سروش',
+    stats: 'عنوان، زیرعنوان و موضوع محتوا',
+    imageIcon: '/images/agents/soroushnq.webp',
+    color: 'bg-black'
   },
   {
-    title: 'سجاد',
-    stats: 'مدیریت پروژه',
-    imageIcon: '/images/icons/logo-b.png',
+    title: 'پُرسانا',
+    stats: 'تهیه سوال از محتوا',
+    imageIcon: '/images/agents/porsanamq.webp',
+    color: 'info'
+  },
+  {
+    title: 'واژه بان',
+    stats: 'استخراج کلمات معنایی و مهم محتوا',
+    imageIcon: '/images/agents/vajebanq.webp',
     color: 'bg-black'
   }
 ]
@@ -77,7 +89,7 @@ const ShortCutsAi = () => {
           return (
             <Fragment key={i}>
               <div className='p-3 items-stretc h-full cursor-pointer'>
-                <AppsShortcut {...item} />
+                <AiShortcut {...item} />
               </div>
             </Fragment>
           )

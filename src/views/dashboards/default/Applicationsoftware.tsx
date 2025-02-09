@@ -42,7 +42,7 @@ const TopCourses = () => {
       </div>
       <CardContent className='flex flex-col gap-3'>
         {data.map((item, i) => (
-          <div key={i} className='flex items-center gap-4 bg-white p-2 rounded-md'>
+          <div key={i} className='flex items-center gap-4 bg-white p-2 rounded-md shadow-md'>
             <CustomAvatar variant='rounded' skin='light' color={item.color}>
               <i className={item.icon} />
             </CustomAvatar>

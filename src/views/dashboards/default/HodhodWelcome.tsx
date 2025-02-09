@@ -28,7 +28,7 @@ const HodhodWelcome = () => {
       <CardContent className='flex flex-col gap-4'>
         <div className='flex justify-center rounded bg-primaryLight aspect-video overflow-hidden'>
           <img
-            src='/images/illustrations/characters/hodhod.jpg'
+            src='/images/agents/danam.webp'
             className='w-full object-cover
            '
           />

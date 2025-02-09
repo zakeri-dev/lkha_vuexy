@@ -56,7 +56,7 @@ const DashboardCRM = async () => {
           <Baner />
         </div>
       </Grid>
-      <Grid container spacing={4} className='bg-amber-300/70 p-6 rounded-md items-stretc !border-0 !shadow-none'>
+      <Grid container spacing={4} className='border border-dashed  p-6 rounded-md items-stretc  !shadow-none'>
         <Grid size={{ xs: 12, sm: 6, md: 4 }}>
           <Applicationsoftware />
         </Grid>

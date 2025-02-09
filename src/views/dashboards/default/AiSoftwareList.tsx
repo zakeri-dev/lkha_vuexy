@@ -41,7 +41,7 @@ const AiSoftwareList = () => {
       </div>
       <CardContent className='flex flex-col gap-3'>
         {data.map((item, i) => (
-          <div key={i} className='flex items-center gap-4 bg-white p-2 rounded-md'>
+          <div key={i} className='flex items-center gap-4 bg-white p-2 rounded-md shadow-md'>
             <div className='relative flex items-center justify-center'>
               <CircularProgress
                 variant='determinate'

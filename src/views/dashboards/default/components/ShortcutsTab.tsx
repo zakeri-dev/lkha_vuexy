@@ -11,7 +11,7 @@ import ShortCutsApp from '../ShortCutsApp'
 import ShortCutsAi from '../ShortCutsAi'
 
 export default function ShortcutsTab() {
-  const [value, setValue] = useState<string>('1')
+  const [value, setValue] = useState<string>('2')
 
   const handleChange = (_: SyntheticEvent, newValue: string) => {
     setValue(newValue)
