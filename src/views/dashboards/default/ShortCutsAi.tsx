@@ -6,6 +6,8 @@ import Image from 'next/image'
 // Components Imports
 import classNames from 'classnames'
 
+import { useSelector } from 'react-redux'
+
 import Slider from '@/components/slider/slider'
 import AiShortcut from '@/components/card-statistics/AiShortcut'
 
@@ -61,6 +63,11 @@ const defaultSlide = [
 ]
 
 const ShortCutsAi = () => {
+  // Hooks
+  const agents = useSelector((state: any) => state.agentsReducer.agents)
+
+  // console.log(agents)
+
   return (
     <div className='ai-shortcuts'>
       <Slider
@@ -84,7 +91,7 @@ const ShortCutsAi = () => {
         }}
         className={'w-full overflow-hidden  object-cover !h-auto items-stretc justify-center items-center'}
       >
-        {defaultSlide?.map((item: any, i: number) => {
+        {agents?.map((item: any, i: number) => {
           // console.log(slide)
           return (
             <Fragment key={i}>

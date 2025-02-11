@@ -11,7 +11,7 @@ import Typography from '@mui/material/Typography'
 // Component Imports
 import axios from 'axios'
 
-import PhoneCard from './PhoneCard'
+// import PhoneCard from './PhoneCard'
 import CustomTextField from '@/@core/components/mui/TextField'
 
 const Phone = () => {
@@ -42,7 +42,8 @@ const Phone = () => {
         console.log(error)
       })
   }, [number])
-  console.log(user)
+
+  // console.log(user)
 
   return (
     <Card className=' bg-gradient-to-tr	from-[#182da3] to-[#6b81fc] rounded-md'>

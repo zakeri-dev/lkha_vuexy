@@ -30,6 +30,31 @@ export const soroushHandler = createAsyncThunk('agents/soroushHandler', async (M
   }
 })
 
+export const kheradYarHandler = createAsyncThunk(
+  'agents/kheradYarHandler',
+  async (Msg: string, { getState, dispatch }) => {
+    // const state = getState() as { agentsReducer: { selected: { msg: string } } }
+
+    dispatch(sendMsg({ msg: Msg }))
+
+    const config = {
+      method: 'post',
+      maxBodyLength: Infinity,
+      url: 'https://flow-getway.app.khi.local/webhook/d676016f-3deb-4e27-8ed5-87329e6aae96',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      data: { chatInput: Msg }
+    }
+
+    const res = await axios.request(config)
+
+    return {
+      res: res.data[0].summary
+    }
+  }
+)
+
 export const agentsSlice = createSlice({
   name: 'agents',
   initialState: {
@@ -37,88 +62,76 @@ export const agentsSlice = createSlice({
     selected: {
       loading: false,
       msg: '',
-      result: null
+      result: null as string | null
+    },
+    kheradYar: {
+      loading: false,
+      msg: '',
+      result: ``
     }
   },
   reducers: {
-    // getActiveUserData: (state, action: PayloadAction<number>) => {
-    //   const activeUser = state.contacts.find(user => user.id === action.payload)
-    //   const chat = state.chats.find(chat => chat.userId === action.payload)
-    //   if (chat && chat.unseenMsgs > 0) {
-    //     chat.unseenMsgs = 0
-    //   }
-    //   if (activeUser) {
-    //     state.activeUser = activeUser
-    //   }
-    // },
-    // addNewChat: (state, action) => {
-    //   const { id } = action.payload
-    //   state.contacts.find(contact => {
-    //     if (contact.id === id && !state.chats.find(chat => chat.userId === contact.id)) {
-    //       state.chats.unshift({
-    //         id: state.chats.length + 1,
-    //         userId: contact.id,
-    //         unseenMsgs: 0,
-    //         chat: []
-    //       })
-    //     }
-    //   })
-    // },
-    // setUserStatus: (state, action: PayloadAction<{ status: StatusType }>) => {
-    //   state.profileUser = {
-    //     ...state.profileUser,
-    //     status: action.payload.status
-    //   }
-    // },
     sendMsg: (state, action: PayloadAction<{ msg: string }>) => {
       const { msg } = action.payload
 
       // console.log(msg)
       state.selected.msg = msg
-
-      // const existingChat = state.chats.find(chat => chat.userId === state.activeUser?.id)
-      // if (existingChat) {
-      //   existingChat.chat.push({
-      //     message: msg,
-      //     time: new Date(),
-      //     senderId: state.profileUser.id,
-      //     msgStatus: {
-      //       isSent: true,
-      //       isDelivered: false,
-      //       isSeen: false
-      //     }
-      //   })
-      //   // Remove the chat from its current position
-      //   state.chats = state.chats.filter(chat => chat.userId !== state.activeUser?.id)
-      //   // Add the chat back to the beginning of the array
-      //   state.chats.unshift(existingChat)
     }
   },
   extraReducers: builder => {
     builder.addCase(soroushHandler.fulfilled, (state, action) => {
       state.selected.loading = false
-      state.selected.result = action.payload.res
+
+      const result = `
+                  <p>
+                  <strong><span className='font-bold'>عنوان :</span></strong> ${action.payload.res.title || ''}
+                  </p>
+                  <p>
+                  <strong><span className='font-bold'>زیر عنوان :</span></strong> ${action.payload.res.subtitle || ''}
+                  </p>
+                  <p>
+                  <strong><span className='font-bold'>موضوعات مطرح شده :</span></strong>
+                  </p>
+                  <p>
+                  <span className='font-bold mr-4'>موضوع اول :</span> ${action.payload.res.topics[0] || ''}
+                  </p>
+                  <p>
+                  <span className='font-bold mr-4'>موضوع دوم :</span> ${action.payload.res.topics[1] || ''}
+                  </p>
+                  <p>
+                  <span className='font-bold mr-4'>موضوع سوم :</span> ${action.payload.res.topics[2] || ''}
+                  </p>
+                  <p>
+                  <span className='font-bold mr-4'>موضوع چهارم :</span> ${action.payload.res.topics[3] || ''}
+                  </p>
+                  <p>
+                  <span className='font-bold mr-4'>موضوع پنجم :</span> ${action.payload.res.topics[4] || ''}
+                  </p>
+                  `
+
+      state.selected.result = result
 
       // console.log(action.payload.res)
     })
     builder.addCase(soroushHandler.pending, state => {
       state.selected.loading = true
     })
-    builder.addCase(soroushHandler.rejected, (state, action) => {
+
+    // Kherad Yar
+    builder.addCase(kheradYarHandler.fulfilled, (state, action) => {
       state.selected.loading = false
-      console.log(action.payload)
+
+      const result = `
+                  <strong><span className='font-bold'>خلاصه :</span></strong> ${action.payload.res || ''}
+                  `
+
+      state.selected.result = result
+
+      // console.log(action.payload)
     })
-
-    // builder.addCase(setJWT.fulfilled, (state, action) => {
-    //   // console.log(action.payload)
-    //   const oneWeekFromNow = new Date()
-
-    //   oneWeekFromNow.setDate(oneWeekFromNow.getDate() + 7)
-    //   cookie.set('jwt', action.payload?.data.refresh_token, { expires: oneWeekFromNow })
-    //   state.userInfo = action.payload?.data.user_info
-    //   localStorage.setItem('userInfo', JSON.stringify(action.payload?.data.user_info))
-    //   window.location.replace('/')
-    // })
+    builder.addCase(kheradYarHandler.pending, state => {
+      state.selected.loading = true
+    })
   }
 })
 

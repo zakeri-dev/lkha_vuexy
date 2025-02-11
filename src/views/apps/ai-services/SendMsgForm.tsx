@@ -3,16 +3,20 @@ import { useState } from 'react'
 import type { FormEvent, KeyboardEvent } from 'react'
 
 // MUI Imports
+import { useSearchParams } from 'next/navigation'
+
 import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
 
 // import IconButton from '@mui/material/IconButton'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { sendMsg, soroushHandler } from '@/redux-store/slices/agents'
+import { kheradYarHandler, sendMsg, soroushHandler } from '@/redux-store/slices/agents'
 import type { AppDispatch } from '@/redux-store'
 
 const SendMsgForm = ({}: any) => {
+  const searchParams = useSearchParams()
+
   const dispatch = useDispatch<AppDispatch>()
   const agents = useSelector((state: any) => state.agentsReducer)
 
@@ -23,12 +27,23 @@ const SendMsgForm = ({}: any) => {
     event.preventDefault()
 
     if (msg.trim() !== '') {
-      dispatch(soroushHandler(msg))
+      switch (searchParams.get('agent')) {
+        case 'kheradYar':
+          dispatch(kheradYarHandler(msg))
+          break
+        case 'soroush':
+          dispatch(soroushHandler(msg))
+          break
+        default:
+          // handle default case if needed
+          break
+      }
+      
       setMsg('')
     }
   }
 
-  // console.log(agents.selected.loading)
+  // console.log(searchParams.get('agent'))
 
   const handleInputEndAdornment = () => {
     return (
