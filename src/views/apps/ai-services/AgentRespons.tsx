@@ -50,7 +50,19 @@ const AgentRespons = ({ agentData }: any) => {
               <div
                 className='max-w-[85%] flex flex-col gap-2 light:bg-white dark:border-2 border-white shadow-md p-3 rounded-tr-xl rounded-tl-xl rounded-br-xl'
                 dangerouslySetInnerHTML={{ __html: agents?.selected?.result }}
-              ></div>
+              >
+                {/* {JSON.parse(agents?.selected?.result).map((item, index) => (
+                  <div key={index} className='mb-4 p-4 border rounded-lg shadow-md bg-white'>
+                    <h2 className='text-lg font-bold mb-2'>{item.question1}</h2>
+                    <ul className='list-disc pr-5 mb-2'>
+                      {Object.entries(item.answers).map(([key, answer]) => (
+                        <li key={key} className='text-gray-700'>{`${key}: ${answer}`}</li>
+                      ))}
+                    </ul>
+                    <p className='text-gray-600 italic'>{item.evaluations}</p>
+                  </div>
+                ))} */}
+              </div>
             </div>
           ) : agents?.selected?.loading ? (
             <div className='flex flex-row-reverse'>

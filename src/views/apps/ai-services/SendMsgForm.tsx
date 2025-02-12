@@ -11,7 +11,7 @@ import Button from '@mui/material/Button'
 // import IconButton from '@mui/material/IconButton'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { kheradYarHandler, sendMsg, soroushHandler } from '@/redux-store/slices/agents'
+import { kheradYarHandler, porsanaHandler, sendMsg, soroushHandler, vajeBanHandler } from '@/redux-store/slices/agents'
 import type { AppDispatch } from '@/redux-store'
 
 const SendMsgForm = ({}: any) => {
@@ -28,6 +28,12 @@ const SendMsgForm = ({}: any) => {
 
     if (msg.trim() !== '') {
       switch (searchParams.get('agent')) {
+        case 'porsana':
+          dispatch(porsanaHandler(msg))
+          break
+        case 'vajeBan':
+          dispatch(vajeBanHandler(msg))
+          break
         case 'kheradYar':
           dispatch(kheradYarHandler(msg))
           break
@@ -38,7 +44,7 @@ const SendMsgForm = ({}: any) => {
           // handle default case if needed
           break
       }
-      
+
       setMsg('')
     }
   }
