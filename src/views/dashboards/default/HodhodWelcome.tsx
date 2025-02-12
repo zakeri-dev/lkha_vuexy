@@ -35,7 +35,7 @@ const HodhodWelcome = () => {
         </div>
         <div>
           <Typography variant='h5' className='mbe-2 text-center'>
-            گفتگو با هدهد
+            گفتگو با دانا
           </Typography>
           <Typography variant='body2' className=' text-center'>
             سلام همکار خوبم، من هدهد هستم. اومدم تا در مسیری که هستی کمکت کنم! آماده ای شروع کنیم؟

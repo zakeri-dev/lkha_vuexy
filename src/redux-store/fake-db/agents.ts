@@ -85,9 +85,9 @@ export const agentsInfo = [
     color: 'error'
   },
   {
-    agent: 'nokteYar',
-    title: 'نکته یار',
-    stats: 'فیشبرداری',
+    agent: 'ava',
+    title: 'آوا',
+    stats: 'تبدیل نوشتار به صوت',
     model: 'llama3.3:latest',
     wellcome: 'سلام! متن مورد نظر خودت رو ارسال کن تا برای شما ویرایش کنم.',
     description: 'پیام‌آور هوشمند',
@@ -102,9 +102,10 @@ export const agentsInfo = [
     color: 'info'
   },
   {
-    agent: 'pishNegar',
-    title: 'پیش نگار',
-    stats: 'تصحیح نگارش و پیشنهاداملا',
+
+    agent: 'shiva',
+    title: 'شیوا',
+    stats: 'تبدیل صوت و کلیپ به نوشتار',
     model: 'llama3.3:latest',
     wellcome: 'سلام! متن مورد نظر خودت رو ارسال کن تا برای شما ویرایش کنم.',
     description: 'پیام‌آور هوشمند',

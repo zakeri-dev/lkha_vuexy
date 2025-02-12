@@ -1,3 +1,5 @@
+'use client'
+
 // React Imports
 import { useState } from 'react'
 import type { FormEvent, KeyboardEvent } from 'react'
@@ -11,7 +13,18 @@ import Button from '@mui/material/Button'
 // import IconButton from '@mui/material/IconButton'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { kheradYarHandler, porsanaHandler, sendMsg, soroushHandler, vajeBanHandler } from '@/redux-store/slices/agents'
+import { IconButton } from '@mui/material'
+
+import {
+  avaHandler,
+  kheradYarHandler,
+  porsanaHandler,
+  sendMsg,
+  shivaHandler,
+  soroushHandler,
+  vajeBanHandler,
+  zabanYarHandler
+} from '@/redux-store/slices/agents'
 import type { AppDispatch } from '@/redux-store'
 
 const SendMsgForm = ({}: any) => {
@@ -22,12 +35,22 @@ const SendMsgForm = ({}: any) => {
 
   // States
   const [msg, setMsg] = useState('')
+  const [file, setFile] = useState<FileList | null>(null)
 
   const handleSendMsg = (event: FormEvent | KeyboardEvent, msg: string) => {
     event.preventDefault()
 
     if (msg.trim() !== '') {
       switch (searchParams.get('agent')) {
+        case 'ava':
+          dispatch(avaHandler(msg))
+          break
+        case 'shiva':
+          dispatch(shivaHandler({ Msg: msg, file: file }))
+          break
+        case 'zabanYar':
+          dispatch(zabanYarHandler(msg))
+          break
         case 'porsana':
           dispatch(porsanaHandler(msg))
           break
@@ -57,11 +80,13 @@ const SendMsgForm = ({}: any) => {
         <>
           {/* <IconButton>
             <i className='tabler-microphone text-textPrimary' />
-          </IconButton>
-          <IconButton component='label' htmlFor='upload-img'>
-            <i className='tabler-paperclip text-textPrimary' />
-            <input hidden type='file' id='upload-img' />
           </IconButton> */}
+          {searchParams.get('agent') === 'shiva' && (
+            <IconButton component='label' htmlFor='upload-img'>
+              <i className='tabler-paperclip text-textPrimary' />
+              <input hidden type='file' id='upload-img' onChange={event => setFile(event.target.files)} />
+            </IconButton>
+          )}
           {/* <CustomIconButton variant='contained' color='primary' type='submit'>
             <i className='tabler-send' />
           </CustomIconButton> */}

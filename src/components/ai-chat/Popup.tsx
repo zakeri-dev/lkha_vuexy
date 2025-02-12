@@ -43,7 +43,7 @@ const ChatPup = () => {
         chatWindow: {
           showTitle: true,
           showAgentMessages: true,
-          title: 'هدهد',
+          title: 'دانا',
 
           // titleAvatarSrc: 'https://cms.app.khi.local/assets/b7821cdc-0734-46a4-a341-aa232c19d4dc',
           welcomeMessage: 'سلام! امیدوارم بتونم در کنارت باشم و بخوبی بهت کمک کنم.',

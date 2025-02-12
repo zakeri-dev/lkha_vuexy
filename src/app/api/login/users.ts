@@ -14,9 +14,9 @@ export type UserTable = {
 export const users: UserTable[] = [
   {
     id: 1,
-    name: 'John Doe',
-    password: 'admin10',
-    email: 'admin@vuexy.com',
+    name: 'محمد علوی',
+    password: '46537678',
+    email: 'spm@mzakeri.ir',
     image: '/images/avatars/avataruser.png'
   }
 ]
