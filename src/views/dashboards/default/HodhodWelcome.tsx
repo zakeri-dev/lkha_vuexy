@@ -59,7 +59,7 @@ const HodhodWelcome = () => {
           ))}
         </div> */}
         {/* <Link href={`http://192.168.100.27:3002/`}> */}
-        <Button href='http://192.168.100.27:3002/' variant='contained' className=''>
+        <Button href='http://192.168.100.27:3000/' variant='contained' className=''>
           آغاز گفتگو (به زودی)
         </Button>
         {/* </Link> */}

@@ -8,6 +8,8 @@ import { useTheme } from '@mui/material/styles'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 
 // Type Imports
+import { useSelector } from 'react-redux'
+
 import type { getDictionary } from '@/utils/getDictionary'
 import type { VerticalMenuContextProps } from '@menu/components/vertical-menu/Menu'
 
@@ -51,6 +53,8 @@ const VerticalMenu = ({ dictionary, scrollMenu }: Props) => {
   const theme = useTheme()
   const verticalNavOptions = useVerticalNav()
   const params = useParams()
+
+  const agents = useSelector((state: any) => state.agentsReducer.agents)
 
   // Vars
   const { isBreakpointReached, transitionDuration } = verticalNavOptions
@@ -127,15 +131,21 @@ const VerticalMenu = ({ dictionary, scrollMenu }: Props) => {
           <MenuItem href={`/${locale}/dashboards/logistics`}>{dictionary['navigation'].logistics}</MenuItem>
         </SubMenu> */}
         <SubMenu label='معاونت ها' icon={<i className='tabler-building-skyscraper' />}>
-          <MenuItem href='#'>فناوری اطلاعات</MenuItem>
-          <MenuItem href='#'>پژوهش</MenuItem>
-          <MenuItem href='#'>بین الملل</MenuItem>
-          <MenuItem href='#'>برنامه ریزی و امور اجرایی</MenuItem>
-          <MenuItem href='#'>فرهنگی</MenuItem>
-          <MenuItem href='#'>رسانه</MenuItem>
-          <MenuItem href='#'>منابع انسانی</MenuItem>
+          <MenuItem href='#'>حوزه ریاست</MenuItem>
+          <MenuItem href='#'>معاونت برنامه ریزی و امور اجرایی</MenuItem>
+          <MenuItem href='#'>معاونت رسانه</MenuItem>
+          <MenuItem href='#'>معاونت بین الملل</MenuItem>
+          <MenuItem href='#'>معاونت فرهنگی</MenuItem>
+          <MenuItem href='#'>معاونت تقسیم کار ملی</MenuItem>
+          <MenuItem href='#'>مدیریت مرکز رصد و تحلیل</MenuItem>
+          <MenuItem href='#'>مدیریت بررسی های تاریخی و سیاسی</MenuItem>
+          <MenuItem href='#'>مرکز صیانت</MenuItem>
+          <MenuItem href='#'>مرکز امور مجامع و دفاتر وابسته</MenuItem>
+          <MenuItem href='#'>پژوهشگاه معارف انقلاب اسلامیا</MenuItem>
+          <MenuItem href='#'>موسسه انتشارات</MenuItem>
+          <MenuItem href='#'>دفتر ارتباطات نیروهای مسلح</MenuItem>
         </SubMenu>
-        <SubMenu label='مدیریت فایل' icon={<i className='tabler-folders' />}>
+        {/* <SubMenu label='مدیریت فایل' icon={<i className='tabler-folders' />}>
           <MenuItem href='#'>فناوری اطلاعات</MenuItem>
           <MenuItem href='#'>پژوهش</MenuItem>
           <MenuItem href='#'>بین الملل</MenuItem>
@@ -143,34 +153,61 @@ const VerticalMenu = ({ dictionary, scrollMenu }: Props) => {
           <MenuItem href='#'>فرهنگی</MenuItem>
           <MenuItem href='#'>رسانه</MenuItem>
           <MenuItem href='#'>منابع انسانی</MenuItem>
+        </SubMenu> */}
+        {/* <SubMenu
+          label='پشتیبانی'
+          icon={
+            <i
+              className='tabler-lifebuoy
+'
+            />
+          }
+        >
+          <MenuItem href='#'>فناوری اطلاعات</MenuItem>
+          <MenuItem href='#'>پژوهش</MenuItem>
+          <MenuItem href='#'>بین الملل</MenuItem>
+          <MenuItem href='#'>برنامه ریزی و امور اجرایی</MenuItem>
+          <MenuItem href='#'>فرهنگی</MenuItem>
+          <MenuItem href='#'>رسانه</MenuItem>
+          <MenuItem href='#'>منابع انسانی</MenuItem>
+        </SubMenu> */}
+        {/* <SubMenu label='ارتباطات' icon={<i className='tabler-affiliate' />}>
+          <MenuItem href='#'>فناوری اطلاعات</MenuItem>
+          <MenuItem href='#'>پژوهش</MenuItem>
+          <MenuItem href='#'>بین الملل</MenuItem>
+          <MenuItem href='#'>برنامه ریزی و امور اجرایی</MenuItem>
+          <MenuItem href='#'>فرهنگی</MenuItem>
+          <MenuItem href='#'>رسانه</MenuItem>
+          <MenuItem href='#'>منابع انسانی</MenuItem>
+        </SubMenu> */}
+        <SubMenu label='خدمات هوشمند' icon={<i className='tabler-settings' />}>
+          {agents?.map((item: any, i: number) => {
+            // console.log(slide)
+            return (
+              <MenuItem
+                key={i}
+                href={item?.agent !== 'dana' ? `apps/ai-services?agent=${item?.agent}` : `http://192.168.100.27:3000/`}
+              >
+                {item?.title}
+              </MenuItem>
+            )
+          })}
         </SubMenu>
-        <SubMenu label='پشتیبانی' icon={<i className='tabler-lifebuoy
-' />}>
-          <MenuItem href='#'>فناوری اطلاعات</MenuItem>
-          <MenuItem href='#'>پژوهش</MenuItem>
-          <MenuItem href='#'>بین الملل</MenuItem>
-          <MenuItem href='#'>برنامه ریزی و امور اجرایی</MenuItem>
-          <MenuItem href='#'>فرهنگی</MenuItem>
-          <MenuItem href='#'>رسانه</MenuItem>
-          <MenuItem href='#'>منابع انسانی</MenuItem>
-        </SubMenu>
-        <SubMenu label='ارتباطات' icon={<i className='tabler-affiliate' />}>
-          <MenuItem href='#'>فناوری اطلاعات</MenuItem>
-          <MenuItem href='#'>پژوهش</MenuItem>
-          <MenuItem href='#'>بین الملل</MenuItem>
-          <MenuItem href='#'>برنامه ریزی و امور اجرایی</MenuItem>
-          <MenuItem href='#'>فرهنگی</MenuItem>
-          <MenuItem href='#'>رسانه</MenuItem>
-          <MenuItem href='#'>منابع انسانی</MenuItem>
+        <SubMenu label='سامانه ها' icon={<i className='tabler-settings' />}>
+          <MenuItem href='#'>میزیتو</MenuItem>
+          <MenuItem href='#'>فکور</MenuItem>
+          <MenuItem href='#'>رستوران</MenuItem>
+          <MenuItem href='#'>خدمات</MenuItem>
+          <MenuItem href='#'>سجاد</MenuItem>
+          <MenuItem href='#'>چارگون</MenuItem>
+
         </SubMenu>
         <SubMenu label='تنظیمات' icon={<i className='tabler-settings' />}>
-          <MenuItem href='#'>فناوری اطلاعات</MenuItem>
-          <MenuItem href='#'>پژوهش</MenuItem>
-          <MenuItem href='#'>بین الملل</MenuItem>
-          <MenuItem href='#'>برنامه ریزی و امور اجرایی</MenuItem>
-          <MenuItem href='#'>فرهنگی</MenuItem>
-          <MenuItem href='#'>رسانه</MenuItem>
-          <MenuItem href='#'>منابع انسانی</MenuItem>
+          <MenuItem href='#'>اطلاعات من</MenuItem>
+          <MenuItem href='#'>تنظیمات</MenuItem>
+          <MenuItem href='#'>امتیاز</MenuItem>
+          <MenuItem href='#'>پشتیبانی</MenuItem>
+          <MenuItem href='#'>خروج</MenuItem>
         </SubMenu>
         {/* <MenuSection label={dictionary['navigation'].appsPages}>
           <SubMenu label={dictionary['navigation'].eCommerce} icon={<i className='tabler-shopping-cart' />}>

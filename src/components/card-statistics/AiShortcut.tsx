@@ -32,7 +32,7 @@ const AiShortcut = (props: any) => {
   const { title, stats, avatarq, color, agent } = props
 
   return (
-    <Link href={agent !== 'dana' ? `apps/ai-services?agent=${agent}` : `http://192.168.100.27:3002/`}>
+    <Link href={agent !== 'dana' ? `apps/ai-services?agent=${agent}` : `http://192.168.100.27:3000/`}>
       <Card color={color || 'primary'} className='aspect-square rounded-full'>
         <Image src={avatarq} alt='alt' width={100} height={100} unoptimized className='w-full h-full ' />
       </Card>
