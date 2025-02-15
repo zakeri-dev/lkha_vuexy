@@ -17,7 +17,7 @@ import Grid from '@mui/material/Grid2'
 import WelcomeAiAgentCard from '@/views/apps/ai-services/WelcomeAiAgentCard'
 import AgentRespons from '@/views/apps/ai-services/AgentRespons'
 import AgentSetting from '@/views/apps/ai-services/AgentSetting'
-import agentsReducer from '@/redux-store/slices/agents'
+import agentsReducer, { clearAgent } from '@/redux-store/slices/agents'
 
 // Data Imports
 
@@ -42,6 +42,8 @@ const agent = {
 const ChatApp = () => {
   const [selectedAgent, setSelectedAgent] = useState(agent)
 
+  const dispatch = useDispatch()
+
   // const router = useRouter()
   const searchParams = useSearchParams()
 
@@ -50,6 +52,7 @@ const ChatApp = () => {
 
   useEffect(() => {
     setSelectedAgent(find(agents, { agent: searchParams.get('agent') }) || agent)
+    dispatch(clearAgent())
   }, [agents])
 
   // const dispatch = useDispatch()

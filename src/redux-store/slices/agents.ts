@@ -192,6 +192,10 @@ export const agentsSlice = createSlice({
 
       // console.log(msg)
       state.selected.msg = msg
+    },
+    clearAgent: (state) => {
+      state.selected.msg = ''
+      state.selected.result = ''
     }
   },
   extraReducers: builder => {
@@ -397,6 +401,6 @@ export const agentsSlice = createSlice({
   }
 })
 
-export const { sendMsg } = agentsSlice.actions
+export const { sendMsg, clearAgent } = agentsSlice.actions
 
 export default agentsSlice.reducer

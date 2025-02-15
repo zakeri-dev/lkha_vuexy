@@ -1,4 +1,6 @@
 // MUI Imports
+import Link from 'next/link'
+
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import Button from '@mui/material/Button'
@@ -56,9 +58,11 @@ const HodhodWelcome = () => {
             </div>
           ))}
         </div> */}
-        <Button variant='contained' className='blur-[1px]' disableElevation>
+        {/* <Link href={`http://192.168.100.27:3002/`}> */}
+        <Button href='http://192.168.100.27:3002/' variant='contained' className=''>
           آغاز گفتگو (به زودی)
         </Button>
+        {/* </Link> */}
       </CardContent>
     </Card>
   )
