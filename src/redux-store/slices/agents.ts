@@ -92,7 +92,7 @@ export const zabanYarHandler = createAsyncThunk(
       headers: {
         'Content-Type': 'application/json'
       },
-      data: { chatInput: Msg }
+      data: { chatInput: Msg, lang_from: 'persian', lang_to: 'english', lang_tone: 'formal' }
     }
 
     const res = await axios.request(config)
@@ -382,11 +382,12 @@ export const agentsSlice = createSlice({
     builder.addCase(avaHandler.fulfilled, (state, action) => {
       state.selected.loading = false
 
-      // const result = `<audio controls>
-      //                   <source src="https://api.aipaa.ir/api/v1/file_manager/file/download/548155eb-bdaf-4792-8fd9-e5e911172601/" type="audio/mpeg">
-      //                 </audio>`
+      const result = `<audio controls playbackRate='0.5'>
+                        <source src="${action.payload.res.play}" type="audio/mpeg">
+                      </audio>`
+
       // console.log(action.payload.res.download_link)
-      state.selected.result = action.payload.res.download_link
+      state.selected.result = result
 
       // console.log(action.payload.res.transcripts)
     })
