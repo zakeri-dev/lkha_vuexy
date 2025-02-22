@@ -31,7 +31,7 @@ const DashboardCRM = async () => {
       </Grid> */}
       <Grid size={{ xs: 12, sm: 6, lg: 4 }} className='bg-black rounded-lg overflow-hidden p-1'>
         <iframe
-          src='http://192.168.5.81:8080/f476c2ae-6633-4e85-bdaf-80b66d58004f.html'
+          src='http://192.168.5.176:9180/595d9fe0-5090-4494-97c7-0f994c9741fb.html'
           width='100%'
           height='100%'
           frameBorder='0'

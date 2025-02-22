@@ -34,18 +34,26 @@ const defaultSlide = [
     imageIcon: '/images/icons/food.png',
     color: 'warning'
   },
-  {
-    title: 'خدمات',
-    stats: 'سامانه رزرو غذا',
-    imageIcon: '/images/icons/MEET.png',
-    color: '#fff'
-  },
-  {
-    title: 'سجاد',
-    stats: 'مدیریت پروژه',
-    imageIcon: '/images/icons/logo-b.png',
-    color: 'bg-black'
-  }
+
+  // {
+  //   title: 'خدمات',
+  //   stats: 'سامانه رزرو غذا',
+  //   imageIcon: '/images/icons/MEET.png',
+  //   color: '#fff'
+  // },
+
+  // {
+  //   title: 'خدمات',
+  //   stats: 'سامانه رزرو غذا',
+  //   imageIcon: '/images/icons/MEET.png',
+  //   color: '#fff'
+  // },
+  // {
+  //   title: 'سجاد',
+  //   stats: 'مدیریت پروژه',
+  //   imageIcon: '/images/icons/logo-b.png',
+  //   color: 'bg-black'
+  // }
 ]
 
 const ShortCutsApp = () => {

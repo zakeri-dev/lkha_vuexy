@@ -8,7 +8,6 @@ import Link from 'next/link'
 import MuiCard from '@mui/material/Card'
 import Typography from '@mui/material/Typography'
 import { styled } from '@mui/material/styles'
-import { useDispatch } from 'react-redux'
 
 // Types Imports
 
@@ -29,12 +28,33 @@ const Card = styled(MuiCard)<Props>(({ color }) => ({
 
 const AiShortcut = (props: any) => {
   // Props
-  const { title, stats, avatarq, color, agent } = props
+  const { title, stats, avatarq, color, agent, status } = props
 
   return (
-    <Link href={agent !== 'dana' ? `apps/ai-services?agent=${agent}` : `http://192.168.100.27:3000/`}>
-      <Card color={color || 'primary'} className='aspect-square rounded-full'>
-        <Image src={avatarq} alt='alt' width={100} height={100} unoptimized className='w-full h-full ' />
+    <Link
+      href={
+        agent !== 'dana'
+          ? status !== 'active'
+            ? '#'
+            : `apps/ai-services?agent=${agent}`
+          : `http://192.168.100.27:3000/`
+      }
+      className='group'
+    >
+      <Card color={color || 'primary'} className={`relative aspect-square rounded-full `}>
+        {status !== 'active' ? (
+          <div className='text-center w-0 h-0 font-bold group-hover:w-full group-hover:h-full bg-white flex items-center justify-center transition-all duration-300'>
+            به زودی
+          </div>
+        ) : null}
+        <Image
+          src={avatarq}
+          alt='alt'
+          width={100}
+          height={100}
+          unoptimized
+          className={`w-full h-full ${status !== 'active' ? 'blur-[5px]' : ''}`}
+        />
       </Card>
       <Typography className='mt-4 text-lg font-bold w-full text-center'>{title}</Typography>
       <Typography className='text-center pb-1'>{stats}</Typography>
