@@ -102,49 +102,7 @@ export const agentsInfo = [
       'وظیفه من این است که هر متن را با دقت بررسی کرده و آن را به گونه‌ای ترجمه کنم که معنای اصلی، لحن و مفهوم آن حفظ شود. با زبان یار، شما می‌توانید مطمئن باشید که ترجمه‌ها نه تنها درست بلکه به‌طور کامل متناسب با بافت و فرهنگ مقصد خواهند بود. ',
     color: 'error'
   },
-  {
-    agent: 'ava',
-    title: 'آوا',
-    stats: 'تبدیل نوشتار به صوت',
-    model: 'llama3.3:latest',
-    type: 'audio',
-    status: 'active',
-    wellcome: 'سلام! متن مورد نظر خودت رو ارسال کن تا برای شما ویرایش کنم.',
-    description: 'سخنگوی هوشمند',
-    agentBio: `
-      “آوا” متولد شد، تا وقتی دغدغه هات زیاده، مشغول کار خونه ای یا بازی کردن با بچه ها،  پشت فرمونی، چشمات خسته یا بسته شدن و ... از خوندن و یاد گرفتن متن و نوشته های بلند بی نیاز بشی و راحت گوش دل بسپاری به محتوایی که نیاز داری.
-      `,
-    selectedPersona: false,
-    avatar: '/images/agents/nokteh.webp',
-    avatarq: '/images/agents/noktehq.webp',
-    chats: [{ role: 'system', content: 'Speek in persian' }],
-    message: 'من اینجا هستم تا محتوای مورد نظرت رو با صدای کسی که دوس داری بشنوی و به خاطر بسپاری. ',
-    color: 'info'
-  },
-  {
-    agent: 'shiva',
-    title: 'شیوا',
-    stats: 'تبدیل صوت و کلیپ به نوشتار',
-    model: 'llama3.3:latest',
-    type: 'audio',
-    status: 'active',
-    wellcome: 'سلام! متن مورد نظر خودت رو ارسال کن تا برای شما ویرایش کنم.',
-    description: 'کاتب هوشمند',
-    agentBio: `
-      تولد “شیوا” وقتی کلید خورد، که دنیا نیاز به ثبت تاریخ داشت.
 
-وقتشه  به این فکر کنیم، آیا واقعا تنها صداست که می‌ماند؟
-
-من بهت کمک میکنم نگران نباشی و هردو رو در کنار هم داشته باشی.
-      `,
-    selectedPersona: false,
-    avatar: '/images/agents/pishnegar.webp',
-    avatarq: '/images/agents/pishnegarq.webp',
-    chats: [{ role: 'system', content: 'Speek in persian' }],
-    message:
-      'من اینجا هستم تا با تمام توان و دقت، سخنان ارزشمند شما رو بنویسم و برای مرور و نگه داری راحت تر در آینده اونهارو به متن تبدیل کنم. پس نگران نباش و بگو هرآنچه دل تنگت میخواهد. ',
-    color: 'warning'
-  },
   {
     agent: 'porsana',
     title: 'پُرسانا',
@@ -223,6 +181,49 @@ export const agentsInfo = [
     chats: [{ role: 'system', content: 'Speek in persian' }],
     message: '',
     color: 'bg-black'
+  },
+  {
+    agent: 'ava',
+    title: 'آوا',
+    stats: 'تبدیل نوشتار به صوت',
+    model: 'llama3.3:latest',
+    type: 'audio',
+    status: 'active',
+    wellcome: 'سلام! متن مورد نظر خودت رو ارسال کن تا برای شما ویرایش کنم.',
+    description: 'سخنگوی هوشمند',
+    agentBio: `
+      “آوا” متولد شد، تا وقتی دغدغه هات زیاده، مشغول کار خونه ای یا بازی کردن با بچه ها،  پشت فرمونی، چشمات خسته یا بسته شدن و ... از خوندن و یاد گرفتن متن و نوشته های بلند بی نیاز بشی و راحت گوش دل بسپاری به محتوایی که نیاز داری.
+      `,
+    selectedPersona: false,
+    avatar: '/images/agents/nokteh.webp',
+    avatarq: '/images/agents/noktehq.webp',
+    chats: [{ role: 'system', content: 'Speek in persian' }],
+    message: 'من اینجا هستم تا محتوای مورد نظرت رو با صدای کسی که دوس داری بشنوی و به خاطر بسپاری. ',
+    color: 'info'
+  },
+  {
+    agent: 'shiva',
+    title: 'شیوا',
+    stats: 'تبدیل صوت و کلیپ به نوشتار',
+    model: 'llama3.3:latest',
+    type: 'audio',
+    status: 'active',
+    wellcome: 'سلام! متن مورد نظر خودت رو ارسال کن تا برای شما ویرایش کنم.',
+    description: 'کاتب هوشمند',
+    agentBio: `
+      تولد “شیوا” وقتی کلید خورد، که دنیا نیاز به ثبت تاریخ داشت.
+
+وقتشه  به این فکر کنیم، آیا واقعا تنها صداست که می‌ماند؟
+
+من بهت کمک میکنم نگران نباشی و هردو رو در کنار هم داشته باشی.
+      `,
+    selectedPersona: false,
+    avatar: '/images/agents/pishnegar.webp',
+    avatarq: '/images/agents/pishnegarq.webp',
+    chats: [{ role: 'system', content: 'Speek in persian' }],
+    message:
+      'من اینجا هستم تا با تمام توان و دقت، سخنان ارزشمند شما رو بنویسم و برای مرور و نگه داری راحت تر در آینده اونهارو به متن تبدیل کنم. پس نگران نباش و بگو هرآنچه دل تنگت میخواهد. ',
+    color: 'warning'
   },
   {
     agent: 'zir',
