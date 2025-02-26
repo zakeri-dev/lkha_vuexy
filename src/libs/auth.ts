@@ -5,6 +5,7 @@ import KeycloakProvider from 'next-auth/providers/keycloak'
 import type { NextAuthOptions } from 'next-auth'
 
 export const authOptions: NextAuthOptions = {
+  debug: true,
   // ** Configure one or more authentication providers
   // ** Please refer to https://next-auth.js.org/configuration/options#providers for more `providers` options
   providers: [
@@ -30,7 +31,7 @@ export const authOptions: NextAuthOptions = {
 
         try {
           // ** Login API Call to match the user credentials and receive user data in response along with his role
-          const res = await fetch(`${process.env.API_URL}/login`, {
+          const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/login`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'

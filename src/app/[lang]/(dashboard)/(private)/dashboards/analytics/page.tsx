@@ -17,7 +17,7 @@ import ProjectsTable from '@views/dashboards/analytics/ProjectsTable'
 import { getProfileData } from '@/app/server/actions'
 
 /**
- * ! If you need data using an API call, uncomment the below API code, update the `process.env.API_URL` variable in the
+ * ! If you need data using an API call, uncomment the below API code, update the `process.env.NEXT_PUBLIC_API_URL` variable in the
  * ! `.env` file found at root of your project and also update the API endpoints like `/pages/profile` in below example.
  * ! Also, remove the above server action import and the action itself from the `src/app/server/actions.ts` file to clean up unused code
  * ! because we've used the server action for getting our static data.
@@ -25,7 +25,7 @@ import { getProfileData } from '@/app/server/actions'
 
 /* const getProfileData = async () => {
   // Vars
-  const res = await fetch(`${process.env.API_URL}/pages/profile`)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/pages/profile`)
 
   if (!res.ok) {
     throw new Error('Failed to fetch profileData')
@@ -40,9 +40,7 @@ const DashboardAnalytics = async () => {
 
   return (
     <Grid container spacing={6}>
-      <Grid size={{ xs: 12, lg: 6 }}>
-        {/* <WebsiteAnalyticsSlider /> */}
-      </Grid>
+      <Grid size={{ xs: 12, lg: 6 }}>{/* <WebsiteAnalyticsSlider /> */}</Grid>
       <Grid size={{ xs: 12, sm: 6, lg: 3 }}>
         <LineAreaDailySalesChart />
       </Grid>
