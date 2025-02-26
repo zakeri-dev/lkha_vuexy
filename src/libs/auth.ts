@@ -5,7 +5,7 @@ import KeycloakProvider from 'next-auth/providers/keycloak'
 import type { NextAuthOptions } from 'next-auth'
 
 export const authOptions: NextAuthOptions = {
-  debug: true,
+  // debug: true,
   // ** Configure one or more authentication providers
   // ** Please refer to https://next-auth.js.org/configuration/options#providers for more `providers` options
   providers: [

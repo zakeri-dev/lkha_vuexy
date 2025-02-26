@@ -38,22 +38,26 @@ const getLocalePath = (pathName: string, locale: string) => {
 
 // Vars
 const languageData: LanguageDataType[] = [
-  {
-    langCode: 'en',
-    langName: 'English'
-  },
-  {
-    langCode: 'fr',
-    langName: 'French'
-  },
-  {
-    langCode: 'ar',
-    langName: 'عربی'
-  },
+  // {
+  //   langCode: 'en',
+  //   langName: 'English'
+  // },
+  // {
+  //   langCode: 'fr',
+  //   langName: 'French'
+  // },
+  // {
+  //   langCode: 'ar',
+  //   langName: 'عربی'
+  // },
   {
     langCode: 'fa',
     langName: 'فارسی'
-  }
+  },
+  {
+    langCode: 'fa',
+    langName: 'به زودی'
+  },
 ]
 
 const LanguageDropdown = () => {

@@ -96,7 +96,7 @@ const UserDropdown = () => {
         <Avatar
           ref={anchorRef}
           alt={session?.user?.name || ''}
-          src={session?.user?.image || ''}
+          src={session?.user?.image || '/images/avatars/avataruser.png'}
           onClick={handleDropdownOpen}
           className='cursor-pointer bs-[38px] is-[38px]'
         />
@@ -120,16 +120,20 @@ const UserDropdown = () => {
               <ClickAwayListener onClickAway={e => handleDropdownClose(e as MouseEvent | TouchEvent)}>
                 <MenuList>
                   <div className='flex items-center plb-2 pli-6 gap-2' tabIndex={-1}>
-                    <Avatar alt={session?.user?.name || ''} src={session?.user?.image || ''} />
+                    <Avatar alt={session?.user?.name || ''} src={session?.user?.image || '/images/avatars/avataruser.png'} />
                     <div className='flex items-start flex-col'>
                       <Typography className='font-medium' color='text.primary'>
-                        {session?.user?.name || ''}
+                        {session?.user?.name || 'محمد علوی'}
                       </Typography>
                       <Typography variant='caption'>{session?.user?.email || ''}</Typography>
                     </div>
                   </div>
                   <Divider className='mlb-1' />
                   <MenuItem className='mli-2 gap-3' onClick={e => handleDropdownClose(e, '/')}>
+                    <i className='tabler-user' />
+                    <Typography color='text.primary'> به زودی </Typography>
+                  </MenuItem>
+                  {/* <MenuItem className='mli-2 gap-3' onClick={e => handleDropdownClose(e, '/')}>
                     <i className='tabler-user' />
                     <Typography color='text.primary'>اطلاعات من</Typography>
                   </MenuItem>
@@ -157,7 +161,7 @@ const UserDropdown = () => {
                     >
                       خروج
                     </Button>
-                  </div>
+                  </div> */}
                 </MenuList>
               </ClickAwayListener>
             </Paper>
