@@ -186,7 +186,7 @@ const VerticalMenu = ({ dictionary, scrollMenu }: Props) => {
             return (
               <MenuItem
                 key={i}
-                href={item?.agent !== 'dana' ? `apps/ai-services?agent=${item?.agent}` : `http://192.168.100.27:3000/`}
+                href={item?.agent !== 'dana' ? `apps/ai-services?agent=${item?.agent}` : `https://dana.ai.khi.local/`}
               >
                 {item?.title}
               </MenuItem>

@@ -37,7 +37,7 @@ const AiShortcut = (props: any) => {
           ? status !== 'active'
             ? '#'
             : `apps/ai-services?agent=${agent}`
-          : `http://192.168.100.27:3000/`
+          : `https://dana.ai.khi.local/`
       }
       className='group'
     >

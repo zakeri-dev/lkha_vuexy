@@ -59,8 +59,8 @@ const HodhodWelcome = () => {
           ))}
         </div> */}
         {/* <Link href={`http://192.168.100.27:3002/`}> */}
-        <Button href='http://192.168.100.27:3000/' variant='contained' className=''>
-          آغاز گفتگو (به زودی)
+        <Button href='https://dana.ai.khi.local/' variant='contained' className=''>
+          آغاز گفتگو
         </Button>
         {/* </Link> */}
       </CardContent>
