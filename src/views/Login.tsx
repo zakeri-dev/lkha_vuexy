@@ -22,7 +22,7 @@ import Divider from '@mui/material/Divider'
 import Alert from '@mui/material/Alert'
 
 // Third-party Imports
-import { signIn } from 'next-auth/react'
+// import { signIn } from 'next-auth/react'
 import { Controller, useForm } from 'react-hook-form'
 import { valibotResolver } from '@hookform/resolvers/valibot'
 import { email, object, minLength, string, pipe, nonEmpty } from 'valibot'
@@ -143,24 +143,24 @@ const Login = (props: Props) => {
   const onSubmit: SubmitHandler<FormData> = async (data: FormData) => {
     console.log('first')
 
-    const res = await signIn('credentials', {
-      email: data.email,
-      password: data.password,
-      redirect: false
-    })
+    // const res = await signIn('credentials', {
+    //   email: data.email,
+    //   password: data.password,
+    //   redirect: false
+    // })
 
-    if (res && res.ok && res.error === null) {
-      // Vars
-      const redirectURL = searchParams.get('redirectTo') ?? '/'
+    // if (res && res.ok && res.error === null) {
+    //   // Vars
+    //   const redirectURL = searchParams.get('redirectTo') ?? '/'
 
-      router.replace(getLocalizedUrl(redirectURL, locale as Locale))
-    } else {
-      if (res?.error) {
-        const error = JSON.parse(res.error)
+    //   router.replace(getLocalizedUrl(redirectURL, locale as Locale))
+    // } else {
+    //   if (res?.error) {
+    //     const error = JSON.parse(res.error)
 
-        setErrorState(error)
-      }
-    }
+    //     setErrorState(error)
+    //   }
+    // }
   }
 
   const popupCenter = (url: string, title: string) => {

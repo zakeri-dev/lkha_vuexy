@@ -52,7 +52,7 @@ const UserDropdown = () => {
 
   // Hooks
   const router = useRouter()
-  const { data: session } = useSession()
+  // const { data: session } = useSession()
   const { settings } = useSettings()
   const { lang: locale } = useParams()
 
@@ -75,7 +75,7 @@ const UserDropdown = () => {
   const handleUserLogout = async () => {
     try {
       // Sign out from the app
-      await signOut({ callbackUrl: process.env.NEXT_PUBLIC_APP_URL })
+      // await signOut({ callbackUrl: process.env.NEXT_PUBLIC_APP_URL })
     } catch (error) {
       console.error(error)
 
@@ -95,8 +95,8 @@ const UserDropdown = () => {
       >
         <Avatar
           ref={anchorRef}
-          alt={session?.user?.name || ''}
-          src={session?.user?.image || '/images/avatars/avataruser.png'}
+          alt={'محمد علوی'}
+          src={'/images/avatars/avataruser.png'}
           onClick={handleDropdownOpen}
           className='cursor-pointer bs-[38px] is-[38px]'
         />
@@ -120,12 +120,15 @@ const UserDropdown = () => {
               <ClickAwayListener onClickAway={e => handleDropdownClose(e as MouseEvent | TouchEvent)}>
                 <MenuList>
                   <div className='flex items-center plb-2 pli-6 gap-2' tabIndex={-1}>
-                    <Avatar alt={session?.user?.name || ''} src={session?.user?.image || '/images/avatars/avataruser.png'} />
+                    <Avatar
+                      alt={session?.user?.name || 'محمد علوی'}
+                      src={session?.user?.image || '/images/avatars/avataruser.png'}
+                    />
                     <div className='flex items-start flex-col'>
                       <Typography className='font-medium' color='text.primary'>
                         {session?.user?.name || 'محمد علوی'}
                       </Typography>
-                      <Typography variant='caption'>{session?.user?.email || ''}</Typography>
+                      <Typography variant='caption'>{session?.user?.email || 'ai@khi.local'}</Typography>
                     </div>
                   </div>
                   <Divider className='mlb-1' />
