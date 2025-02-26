@@ -39,16 +39,6 @@ const DashboardCRM = async () => {
           className=' aspect-video rounded-lg'
         ></iframe>
       </Grid>
-      <Grid size={{ xs: 12, sm: 6, lg: 12 }} className='bg-black rounded-lg overflow-hidden p-1'>
-        <iframe
-          src='https://google.com'
-          width='100%'
-          height='100%'
-          frameBorder='0'
-          allowFullScreen
-          className=' aspect-video rounded-lg'
-        ></iframe>
-      </Grid>
       <Grid size={{ xs: 12 }}>
         <ShortcutsTab />
         {/* <ShortCutsApp /> */}
