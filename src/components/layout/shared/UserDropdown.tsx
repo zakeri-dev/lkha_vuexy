@@ -22,7 +22,6 @@ import MenuItem from '@mui/material/MenuItem'
 import Button from '@mui/material/Button'
 
 // Third-party Imports
-import { signOut, useSession } from 'next-auth/react'
 
 // Type Imports
 import type { Locale } from '@configs/i18n'
