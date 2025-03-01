@@ -1,17 +1,28 @@
 'use client'
 import { useState, type SyntheticEvent } from 'react'
+import dynamic from 'next/dynamic'
 
-import Tab from '@mui/material/Tab'
-import TabList from '@mui/lab/TabList'
-import TabPanel from '@mui/lab/TabPanel'
-import TabContext from '@mui/lab/TabContext'
-import { Card } from '@mui/material'
+// import Tab from '@mui/material/Tab'
+const Tab = dynamic(() => import('@mui/material/Tab'));
+// import TabList from '@mui/lab/TabList'
+const TabList = dynamic(() => import('@mui/lab/TabList'));
+// import TabPanel from '@mui/lab/TabPanel'
+const TabPanel = dynamic(() => import('@mui/lab/TabPanel'));
+// import TabContext from '@mui/lab/TabContext'
+const TabContext = dynamic(() => import('@mui/lab/TabContext'));
+// import { Card } from '@mui/material'
+const Card = dynamic(() => import('@mui/material/Card'));
 
-import ShortCutsApp from '../ShortCutsApp'
-import ShortCutsAivideo from '../ShortCutsAivideo'
-import ShortCutsDataApp from '../ShortCutsDataApp'
-import ShortCutsAiText from '../ShortCutsAiText'
-import ShortCutsAiAudio from '../ShortCutsAiAudio'
+// import ShortCutsApp from '../ShortCutsApp'
+// import ShortCutsAivideo from '../ShortCutsAivideo'
+// import ShortCutsDataApp from '../ShortCutsDataApp'
+// import ShortCutsAiText from '../ShortCutsAiText'
+// import ShortCutsAiAudio from '../ShortCutsAiAudio'
+const ShortCutsApp = dynamic(() => import('../ShortCutsApp'));
+const ShortCutsAivideo = dynamic(() => import('../ShortCutsAivideo'));
+const ShortCutsDataApp = dynamic(() => import('../ShortCutsDataApp'));
+const ShortCutsAiText = dynamic(() => import('../ShortCutsAiText'));
+const ShortCutsAiAudio = dynamic(() => import('../ShortCutsAiAudio'));
 
 export default function ShortcutsTab() {
   const [value, setValue] = useState<string>('1')
