@@ -1,3 +1,4 @@
+'use client'
 import dynamic from 'next/dynamic'
 // MUI Imports
 
@@ -9,7 +10,6 @@ import ShortCutsApp from '@/views/dashboards/default/ShortCutsApp'
 import Applicationsoftware from '@/views/dashboards/default/Applicationsoftware'
 import HodhodWelcome from '@/views/dashboards/default/HodhodWelcome'
 import AiSoftwareList from '@/views/dashboards/default/AiSoftwareList'
-import TabsCentered from '@/views/dashboards/default/components/TabsCentered'
 import Phone from '@/views/dashboards/default/components/Phone'
 import Baner from '@/views/dashboards/default/components/Baner'
 import { ChatPup } from '@/components/ai-chat/Popup'
