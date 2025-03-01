@@ -9,7 +9,6 @@ import Image from 'next/image'
 
 import axios from 'axios'
 
-import classNames from 'classnames'
 
 import Slider from './components/slider'
 

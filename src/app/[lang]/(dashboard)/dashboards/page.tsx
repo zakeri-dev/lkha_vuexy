@@ -1,4 +1,3 @@
-'use client'
 import dynamic from 'next/dynamic'
 // MUI Imports
 
@@ -6,21 +5,19 @@ import Grid from '@mui/material/Grid2'
 
 // Server Action Imports
 
-import ShortCutsApp from '@/views/dashboards/default/ShortCutsApp'
+// import ContentSlider from '@/views/dashboards/default/ContentSlider'
 import Applicationsoftware from '@/views/dashboards/default/Applicationsoftware'
 import HodhodWelcome from '@/views/dashboards/default/HodhodWelcome'
 import AiSoftwareList from '@/views/dashboards/default/AiSoftwareList'
 import Phone from '@/views/dashboards/default/components/Phone'
 import Baner from '@/views/dashboards/default/components/Baner'
 import { ChatPup } from '@/components/ai-chat/Popup'
+import { Suspense } from 'react'
 const ContentSlider = dynamic(() => import('@/views/dashboards/default/ContentSlider'), {
-  ssr: false,
 });
 const ShortcutsTab = dynamic(() => import('@/views/dashboards/default/components/ShortcutsTab'), {
-  ssr: false,
 });
 const TabsCentered = dynamic(() => import('@/views/dashboards/default/components/TabsCentered'), {
-  ssr: false,
 });
 // filec: `${process.env.NEXT_PUBLIC_API__URL_images}/${data?.s3_image?.id}/${data?.s3_image?.filename_download}`
 
@@ -31,7 +28,9 @@ const DashboardCRM = async () => {
     <Grid container spacing={6}>
       {/* <ChatPup /> */}
       <Grid size={{ xs: 12, lg: 8 }}>
-        <ContentSlider />
+        <Suspense fallback={'در حال اجرا'}>
+          <ContentSlider />
+        </Suspense>
       </Grid>
       {/* <Grid size={{ xs: 12, lg: 2 }}>
         <></>
@@ -48,7 +47,6 @@ const DashboardCRM = async () => {
       </Grid>
       <Grid size={{ xs: 12 }}>
         <ShortcutsTab />
-        {/* <ShortCutsApp /> */}
       </Grid>
       {/* <Grid size={{ xs: 12 }} className='pbs-12'>
         <Typography variant='h3'>Navigation Cards</Typography>
