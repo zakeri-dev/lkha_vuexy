@@ -1,10 +1,10 @@
+import dynamic from 'next/dynamic'
 // MUI Imports
 
 import Grid from '@mui/material/Grid2'
 
 // Server Action Imports
 
-import ContentSlider from '@/views/dashboards/default/ContentSlider'
 import ShortCutsApp from '@/views/dashboards/default/ShortCutsApp'
 import Applicationsoftware from '@/views/dashboards/default/Applicationsoftware'
 import HodhodWelcome from '@/views/dashboards/default/HodhodWelcome'
@@ -13,8 +13,15 @@ import TabsCentered from '@/views/dashboards/default/components/TabsCentered'
 import Phone from '@/views/dashboards/default/components/Phone'
 import Baner from '@/views/dashboards/default/components/Baner'
 import { ChatPup } from '@/components/ai-chat/Popup'
-import ShortcutsTab from '@/views/dashboards/default/components/ShortcutsTab'
-
+const ContentSlider = dynamic(() => import('@/views/dashboards/default/ContentSlider'), {
+  ssr: false,
+});
+const ShortcutsTab = dynamic(() => import('@/views/dashboards/default/components/ShortcutsTab'), {
+  ssr: false,
+});
+const TabsCentered = dynamic(() => import('@/views/dashboards/default/components/TabsCentered'), {
+  ssr: false,
+});
 // filec: `${process.env.NEXT_PUBLIC_API__URL_images}/${data?.s3_image?.id}/${data?.s3_image?.filename_download}`
 
 const DashboardCRM = async () => {

@@ -20,7 +20,6 @@ import HorizontalFooter from '@components/layout/horizontal/Footer'
 
 // import Customizer from '@core/components/customizer'
 import ScrollToTop from '@core/components/scroll-to-top'
-import AuthGuard from '@/hocs/AuthGuard'
 
 // Config Imports
 import { i18n } from '@configs/i18n'
